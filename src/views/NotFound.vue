@@ -1,6 +1,6 @@
 <template>
     <div>
-        首页
+        404 NOT FOUND ...
     </div>
 </template>
 
