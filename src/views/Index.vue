@@ -1,19 +1,19 @@
 <template>
   <div>
     <router-view></router-view>
-    <van-tabbar route placeholder active-color="black" inactive-color="#aaa">
-      <van-tabbar-item
-        replace
-        :to="item.to"
-        :icon="item.icon"
-        v-for="(item,index) in list"
-        :key="index"
-      >{{item.title}}</van-tabbar-item>
+    <van-tabbar v-model="active" route placeholder>
+      <van-tabbar-item v-for="(item,index) in list" :key="index" :to="item.to">
+        <span>{{ item.title}}</span>
+        <template #icon="props">
+          <img :src="props.active ? item.icon.active : item.icon.inactive" />
+        </template>
+      </van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
 
 <script>
+const icon01 = require("@/assets/logo.png")
 export default {
   data() {
     return {
@@ -22,22 +22,34 @@ export default {
         {
           to: "/home",
           title: "首页",
-          icon: "home-o"
+          icon: {
+            active: icon01,
+            inactive: "https://img.yzcdn.cn/vant/user-inactive.png"
+          }
         },
         {
           to: "/classify",
           title: "分类",
-          icon: "search"
+          icon: {
+            active: "https://img.yzcdn.cn/vant/user-active.png",
+            inactive: "https://img.yzcdn.cn/vant/user-inactive.png"
+          }
         },
         {
           to: "/cart",
           title: "购物车",
-          icon: "friends-o"
+          icon: {
+            active: "https://img.yzcdn.cn/vant/user-active.png",
+            inactive: "https://img.yzcdn.cn/vant/user-inactive.png"
+          }
         },
         {
           to: "/mine",
           title: "我的",
-          icon: "setting-o"
+          icon: {
+            active: "https://img.yzcdn.cn/vant/user-active.png",
+            inactive: "https://img.yzcdn.cn/vant/user-inactive.png"
+          }
         }
       ]
     };
