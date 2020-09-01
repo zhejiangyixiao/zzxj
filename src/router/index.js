@@ -58,6 +58,13 @@ const routes = [{
             import ('../views/Login'),
     },
     {
+        //设置商品详情页
+        path:'/detail',
+        component:() =>
+            import('../views/Detailpage.vue')
+    },
+
+    {
         // 未设置的路径 跳转404 页面
         path: "/*",
         component: () =>

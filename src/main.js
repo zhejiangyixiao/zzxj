@@ -26,6 +26,11 @@ import {
     CellGroup,
     Sidebar,
     SidebarItem,
+    Col,
+    Row,
+    GoodsAction, 
+    GoodsActionIcon, 
+    GoodsActionButton
 } from "vant";
 
 Vue.use(Tabbar);
@@ -44,6 +49,11 @@ Vue.use(Cell);
 Vue.use(CellGroup);
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
+Vue.use(Col);
+Vue.use(Row);
+Vue.use(GoodsAction);
+Vue.use(GoodsActionButton);
+Vue.use(GoodsActionIcon);
 
 
 
