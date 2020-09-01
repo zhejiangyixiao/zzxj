@@ -65,7 +65,7 @@
 export default {
   data() {
     return {
-      list:['全部','沙发','椅凳','柜架','床.床具','桌几'],
+      list:['全部','沙发','椅凳','柜架','床·床具','桌几'],
       isActive:0
     }
   },
@@ -81,7 +81,6 @@ export default {
   width 500px
   overflow hidden 
   .topNavList
-    margin-left 11px
     height 27px
     li
       height 27px
@@ -110,14 +109,16 @@ export default {
         img 
           width 100%
         p
-          width 152px
-          height 34px
+          width: 160px;
+          word-break: break-all;
+          text-overflow: ellipsis;
+          line-height 25px
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2; //这里是超出几行省略
+          overflow: hidden;
           font-size 13px
-          line-height 20px
-          text-overflow ellipsis
-          overflow hidden
-          white-space nowrap
-          margin-bottom  23px
+          margin-bottom 35px
         .tx
           position absolute
           left 0
@@ -137,6 +138,9 @@ export default {
             color #323232
             line-height 13px
             margin-left 7px
+            display inline-block
+            margin-top -3px
+
         .dd
           display inline-block
           position absolute

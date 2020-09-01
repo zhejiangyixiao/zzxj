@@ -74,12 +74,12 @@ export default {
     font-size 16px
     color #000
   .van-tabs
-    margin-top 46pxs
     width 100%
     margin-bottom 23px
     .van-tabs__wrap
+      padding 0 0 0 20px
       .van-tabs__nav
-        padding 0 0 15px 20px
+        padding 0 0 15px 0
         .van-tab 
           padding 0
           margin-right 47px
