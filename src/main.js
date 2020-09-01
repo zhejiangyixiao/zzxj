@@ -16,16 +16,20 @@ import {
     Tab,
     Tabs,
     Swipe,
-    SwipeItem
+    SwipeItem,
+    Image as VanImage,
+    Lazyload
 } from "vant";
 
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
-Vue.use(NavBar)
-Vue.use(Tab)
-Vue.use(Tabs)
-Vue.use(Swipe)
-Vue.use(SwipeItem)
+Vue.use(NavBar);
+Vue.use(Tab);
+Vue.use(Tabs);
+Vue.use(Swipe);
+Vue.use(SwipeItem);
+Vue.use(VanImage);
+Vue.use(Lazyload);
 
 
 

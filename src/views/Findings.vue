@@ -3,6 +3,8 @@
     <van-nav-bar
       title="发现"
       :border="false"
+      fixed
+      placeholder
     />
     <van-tabs class="van-hairline--bottom">
       <van-tab 
@@ -15,15 +17,21 @@
       </van-tab>
     </van-tabs>
 
+
+    <inspiration />
   </div>
 </template>
 <script>
+import inspiration from '@/commpoents/findings/inspiration';
 export default {
   data() {
     return {
       topNav:['精选晒单','灵感','品牌','实体店','媒体报道','设计师']
     }
   },
+  components:{
+    inspiration,
+  }
 }
 </script>
 <style lang="stylus">
