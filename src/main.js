@@ -44,9 +44,6 @@ Vue.use(Cell);
 Vue.use(CellGroup);
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
-Vue.use(Grid);
-Vue.use(GridItem);
-Vue.use(VanImage);
 
 
 
