@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-view></router-view>
-    <van-tabbar route placeholder active-color="black" inactive-color="#aaa">
+    <van-tabbar route placeholder active-color="black" inactive-color="#aaa" fixed>
       <van-tabbar-item
         replace
         :to="item.to"

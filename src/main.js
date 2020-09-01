@@ -11,13 +11,23 @@ Vue.config.productionTip = false;
 
 import {
     Tabbar,
-    TabbarItem
+    TabbarItem,
+    Swipe,
+    SwipeItem,
+    Card,
+    NavBar
 } from "vant";
+
+//监听手机滑动事件，引入的模块
+import VueTouch from 'vue-touch';
+Vue.use(VueTouch, { name: 'v-touch' })
 
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
-
-
+Vue.use(Swipe);
+Vue.use(SwipeItem);
+Vue.use(Card);
+Vue.use(NavBar);
 
 new Vue({
     router,

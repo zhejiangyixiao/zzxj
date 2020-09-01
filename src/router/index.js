@@ -7,8 +7,7 @@ const routes = [{
         // 设置重定向 跳转主页面
         path: "/",
         redirect: "/index"
-    },
-    {
+    }, {
         // 刚开始的主页面  包含tabbar
         path: "/index",
         component: () =>
@@ -43,7 +42,7 @@ const routes = [{
                 path: "/mine",
                 component: () =>
                     import ("../views/Mine")
-            }
+            },
         ]
     },
     {
