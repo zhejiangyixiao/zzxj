@@ -55,7 +55,7 @@ const routes = [{
         // 收货地址点击进去的路由页面
         path: '/address',
         component: () =>
-            import ('../commpoents/Mine/AddressAdd.vue')
+            import ('../compoents/Mine/AddressAdd.vue')
     },
     {
         // 设置登录路径
