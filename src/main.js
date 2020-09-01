@@ -26,7 +26,15 @@ import {
     CellGroup,
     Sidebar,
     SidebarItem,
+    AddressEdit,
+    Field,
+    Popup,
+    Checkbox,
+    CheckboxGroup,
+    Button,
+    Area
 } from "vant";
+
 
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
@@ -44,9 +52,13 @@ Vue.use(Cell);
 Vue.use(CellGroup);
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
-
-
-
+Vue.use(AddressEdit);
+Vue.use(Field);
+Vue.use(Popup);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
+Vue.use(Button);
+Vue.use(Area);
 new Vue({
     router,
     store,
