@@ -2,7 +2,7 @@
   <div class="classfiy-container">
     <div class="search">
       <!-- 搜索框 -->
-      <input type="text" name id />
+      <input type="text" />
       <span>
         <img src="../assets/imgs/icon-fangdajing.png" alt />
       </span>
@@ -19,23 +19,26 @@
       </van-sidebar>
 
       <!-- 右侧内容图 -->
-      <!-- <ul class="rightlist">
-        <li v-for="(item,index) in rightList" :key="index">
-          <img :src="item.img" alt />
+      <ul class="rightlist">
+        <li v-for="(item,index) in classfiy_list" :key="index"
+        :style="{width : type === '1' ? '100%' : '47%'}"
+        >
+          <img :src="item.imgUrl" alt=""
+          
+          />
         </li>
-      </ul> -->
-      <van-grid :border='false'>
+      </ul>
+      <!-- <van-grid :border='false'>
           <van-grid-item  
-          :text="item.title" 
           v-for="(item,index) in classfiy_list" 
           :key="index" 
           :icon="item.imgUrl"
           :style="{width : type === '1' ? '100%' : '50%'}"
           style="flex-basis: unset"
-          > 
+          >  -->
           <!-- 给子元素添加样式 参数type（数据接口返回的的值）  做个条件判断 改变某几个css样式， -->
-          </van-grid-item>
-      </van-grid>
+          <!-- </van-grid-item>
+      </van-grid> -->
     </div>
   </div>
 </template>
@@ -47,6 +50,7 @@ export default {
   data() {
     return {
       activeKey: "",
+      type:'1',
       sidebarList: [
         {
           title: "爆款经典",
@@ -61,7 +65,6 @@ export default {
           id: "3"
         }
       ],
-      type:"1"
     };
   },
 
@@ -70,6 +73,7 @@ export default {
   computed: {},
 
   mounted() {
+      //第一次点击分类的时候 默认请求第一索引的数据
     this.$store.dispatch("getClassfiyData",{
         type:this.type
       });
@@ -77,14 +81,19 @@ export default {
 
   methods: {
     sidebarclick(id) {
+        // 
+      this.type=id
       console.log(id);
+      //每次点击也要获取数据
       this.$store.dispatch("getClassfiyData",{
-        type:id
+        type:this.type
       });
     }
   },
   computed: {
-    ...mapState(["classfiy_list"])
+    classfiy_list(){
+        return this.$store.state.classfiy_list
+    }
   },
 };
 </script>
@@ -146,22 +155,22 @@ export default {
 }
 
 // 右侧内容的样式
-.rightlist {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 17px;
-  margin-left: 15px;
-
-  li {
-    width: 245px;
-    height: 135px;
-    margin-top: 3px;
-
-    img {
-      width: 245px;
-      height: 135px;
+.rightlist{
+    width 250px
+    display flex
+    flex-wrap  wrap
+    margin-top 17px
+    margin-left 10px
+    li{
+        width 100%
+        height 135px
+        margin-top 7px
+        margin-left 6px
+        img {
+            width 100%
+            height 135px
+        }
     }
-  }
+  
 }
 </style>
