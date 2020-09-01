@@ -3,7 +3,7 @@
         <div class="search">
             <!-- 搜索框 -->
             <input type="text" name="" id="">
-            <span><img src="../assets/img/icon-fangdajing.png" alt=""></span>
+            <span><img src="../assets/imgs/icon-fangdajing.png" alt=""></span>
         </div>
         <div class="main">
             <!-- 左侧导航 -->
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import img from '../assets/img/img-1.png'
+import img from '../assets/imgs/img-1.png'
 export default {
   data() {
     return {
