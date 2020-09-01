@@ -58,6 +58,11 @@ const routes = [{
             import ('../views/Login'),
     },
     {
+        path: "/test",
+        component: () =>
+            import ('../views/test'),
+    },
+    {
         // 未设置的路径 跳转404 页面
         path: "/*",
         component: () =>

@@ -1,100 +1,130 @@
 <template>
   <div class="findings">
-    <van-nav-bar
-      title="发现"
-      :border="false"
-      fixed
-      placeholder
-      z-index="10"
-    />
+    <van-nav-bar title="发现" :border="false" fixed placeholder z-index="10" />
     <van-tabs class="van-hairline--bottom" @click="onClick" v-model="active">
-      <van-tab 
-      v-for="(item,index) in topNav" 
-      :title="item" 
-      :key="index"
-      :border="true"
-      >
-      </van-tab>
+      <van-tab v-for="(item,index) in topNav" :title="item" :key="index" :border="true"></van-tab>
     </van-tabs>
-    <van-swipe class="my-swipe"   ref="banner" @change="onChange" :loop="false" :show-indicators="false"	>
+    <van-swipe
+      class="my-swipe"
+      ref="banner"
+      @change="onChange"
+      :loop="false"
+      :show-indicators="false"
+    >
       <van-swipe-item>
+        <div class="wrap">
+          <ul @mousemove.stop>
+            <li v-for="index in 10" :key="index">{{ index }}</li>
+          </ul>
+        </div>
         <!-- 精选菜单 -->
-        <FeaturedList/>
+        <FeaturedList />
       </van-swipe-item>
       <van-swipe-item>
         <!-- 灵感 -->
-           <inspiration />
+        <inspiration />
       </van-swipe-item>
-      <van-swipe-item>
-
-      </van-swipe-item>
-      <van-swipe-item>
-        
-        </van-swipe-item>  
-      <van-swipe-item>
-        
-        </van-swipe-item>  
-      <van-swipe-item>
-        
-        </van-swipe-item>  
+      <van-swipe-item></van-swipe-item>
+      <van-swipe-item></van-swipe-item>
+      <van-swipe-item></van-swipe-item>
+      <van-swipe-item></van-swipe-item>
     </van-swipe>
-
-
-    
   </div>
 </template>
 <script>
-import inspiration from '@/compoents/findings/inspiration';
-import FeaturedList from '@/compoents/findings/FeaturedList';
+import inspiration from "@/compoents/findings/inspiration";
+import FeaturedList from "@/compoents/findings/FeaturedList";
+
+import BScroll from "better-scroll";
+
 export default {
   data() {
     return {
-      topNav:['精选晒单','灵感','品牌','实体店','媒体报道','设计师'],
-      active:0
-    }
+      topNav: ["精选晒单", "灵感", "品牌", "实体店", "媒体报道", "设计师"],
+      active: 0
+    };
   },
   methods: {
-    onChange(index){
-      this.active = index
+    onChange(index) {
+      this.active = index;
     },
-    onClick(){
-      this.$refs.banner.swipeTo(this.active)
-    },
-
+    onClick() {
+      this.$refs.banner.swipeTo(this.active);
+    }
   },
-  components:{
+  components: {
     FeaturedList,
-    inspiration,
+    inspiration
+  },
+  mounted() {
+    this.$nextTick(() => {
+      let scroll = new BScroll(".wrap", {
+        scrollY: false,
+        scrollX: true,
+        click: true
+      });
+    });
   }
- 
-}
+};
 </script>
 <style lang="stylus">
-.findings
-  display flex
-  flex-direction column
-  justify-content flex-start
-  align-items center
-  .van-nav-bar__title
-    font-weight bold
-    font-size 16px
-    color #000
-  .van-tabs
-    width 100%
-    margin-bottom 23px
-    .van-tabs__wrap
-      padding 0 0 0 20px
-      .van-tabs__nav
-        padding 0 0 15px 0
-        .van-tab 
-          padding 0
-          margin-right 47px
-        .van-tabs__line
-            background-color #000  
-          .van-tab__text
-            font-size 13px
-            color #000
-            font-weight bold
-  .my-swipe
-    width 355px
+.wrap {
+  width: 90%;
+  overflow: hidden;
+
+  ul {
+    display: inline-flex;
+    background: lightgreen;
+
+    li {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.findings {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .van-nav-bar__title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+  }
+
+  .van-tabs {
+    width: 100%;
+    margin-bottom: 23px;
+
+    .van-tabs__wrap {
+      padding: 0 0 0 20px;
+
+      .van-tabs__nav {
+        padding: 0 0 15px 0;
+
+        .van-tab {
+          padding: 0;
+          margin-right: 47px;
+        }
+
+        .van-tabs__line {
+          background-color: #000;
+        }
+
+        .van-tab__text {
+          font-size: 13px;
+          color: #000;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .my-swipe {
+    width: 355px;
+  }
+}
 </style>
