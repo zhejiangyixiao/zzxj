@@ -26,9 +26,6 @@ import {
     CellGroup,
     Sidebar,
     SidebarItem,
-    Grid,
-    GridItem,
-    Image as VanImage,
 } from "vant";
 
 Vue.use(Tabbar);

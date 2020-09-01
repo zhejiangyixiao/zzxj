@@ -154,17 +154,18 @@ export default {
 }
 // 右侧内容的样式
 .rightlist{
-    flex 1
+    width 250px
     display flex
     flex-wrap wrap
     margin-top 17px
-    margin-left 15px
+    margin-left 10px
     li{
-        width 245px
+        width 244px
         height 135px
-        margin-top 3px
+        margin-top 7px
+        margin-left 6px
         img {
-            width 245px
+            width 100%
             height 135px
         }
     }
