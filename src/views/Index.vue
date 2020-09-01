@@ -13,11 +13,12 @@
 </template>
 
 <script>
+// 将图片存为变量
 const icon01 = require("@/assets/logo.png")
 export default {
   data() {
     return {
-      // 图片路径未设置  后续进行设置
+      // 图片路径未设置  后续进行设置 icon 是两张图片的话 需要设置变量
       list: [
         {
           to: "/home",
