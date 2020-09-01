@@ -40,7 +40,34 @@ export default {
         rightList:[
             {
                 img:img
-            }
+            },
+            {
+                img:img
+            },
+            {
+                img:img
+            },
+            {
+                img:img
+            },
+            {
+                img:img
+            },
+            {
+                img:img
+            },
+            {
+                img:img
+            },
+            {
+                img:img
+            },
+            {
+                img:img
+            },
+            {
+                img:img
+            },
         ],
         sidebarList:[
             {
@@ -94,7 +121,7 @@ export default {
         height 19px
         position absolute
         top 10px
-        right 14px
+        right 10px
         img {
             width 100%
         }
@@ -131,7 +158,7 @@ export default {
     display flex
     flex-wrap wrap
     margin-top 17px
-    margin-left 10px
+    margin-left 15px
     li{
         width 245px
         height 135px
