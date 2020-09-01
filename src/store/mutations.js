@@ -3,4 +3,8 @@ export const mutations = {
     getinspirationData(state, payload) {
         state.inspiration_list = payload.list;
     },
+    // 分类
+    getClassfiyData(state, payload) {
+        state.classfiy_list = payload.list;
+    }
 }

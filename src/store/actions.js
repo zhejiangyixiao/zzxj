@@ -1,5 +1,6 @@
 import {
-    getInspirationList
+    getInspirationList,
+    getClassfiyList
 } from '../until/api';
 
 export const actions = {
@@ -10,4 +11,12 @@ export const actions = {
             list: res.result
         });
     },
+    // 请求分类页
+    async getClassfiyData({ commit }, payload) {
+        const res = await getClassfiyList(payload);
+        console.log(payload, res);
+        commit("getClassfiyData", {
+            list: res.list,
+        })
+    }
 }

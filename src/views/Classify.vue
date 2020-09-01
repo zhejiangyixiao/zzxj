@@ -19,53 +19,34 @@
       </van-sidebar>
 
       <!-- 右侧内容图 -->
-      <ul class="rightlist">
+      <!-- <ul class="rightlist">
         <li v-for="(item,index) in rightList" :key="index">
           <img :src="item.img" alt />
         </li>
-      </ul>
+      </ul> -->
+      <van-grid :border='false'>
+          <van-grid-item  
+          :text="item.title" 
+          v-for="(item,index) in classfiy_list" 
+          :key="index" 
+          :icon="item.imgUrl"
+          :style="{width : type === '1' ? '100%' : '50%'}"
+          style="flex-basis: unset"
+          > 
+          <!-- 给子元素添加样式 参数type（数据接口返回的的值）  做个条件判断 改变某几个css样式， -->
+          </van-grid-item>
+      </van-grid>
     </div>
   </div>
 </template>
 
 <script>
 import img from "../assets/imgs/img-1.png";
+import {mapState} from 'vuex';
 export default {
   data() {
     return {
       activeKey: "",
-      rightList: [
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        }
-      ],
       sidebarList: [
         {
           title: "爆款经典",
@@ -79,7 +60,8 @@ export default {
           title: "沙发·椅凳",
           id: "3"
         }
-      ]
+      ],
+      type:"1"
     };
   },
 
@@ -87,13 +69,23 @@ export default {
 
   computed: {},
 
-  mounted() {},
+  mounted() {
+    this.$store.dispatch("getClassfiyData",{
+        type:this.type
+      });
+  },
 
   methods: {
     sidebarclick(id) {
       console.log(id);
+      this.$store.dispatch("getClassfiyData",{
+        type:id
+      });
     }
-  }
+  },
+  computed: {
+    ...mapState(["classfiy_list"])
+  },
 };
 </script>
 <style lang='stylus' scoped>
