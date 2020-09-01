@@ -11,11 +11,21 @@ Vue.config.productionTip = false;
 
 import {
     Tabbar,
-    TabbarItem
+    TabbarItem,
+    Sidebar,
+    SidebarItem,
+    Grid, 
+    GridItem,
+    Image as VanImage,
 } from "vant";
 
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
+Vue.use(Sidebar);
+Vue.use(SidebarItem);
+Vue.use(Grid);
+Vue.use(GridItem);
+Vue.use(VanImage);
 
 
 
