@@ -26,9 +26,6 @@ import {
     CellGroup,
     Sidebar,
     SidebarItem,
-    Grid,
-    GridItem,
-    Image as VanImage,
 } from "vant";
 
 Vue.use(Tabbar);
@@ -47,9 +44,6 @@ Vue.use(Cell);
 Vue.use(CellGroup);
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
-Vue.use(Grid);
-Vue.use(GridItem);
-Vue.use(VanImage);
 
 
 
