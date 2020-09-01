@@ -11,11 +11,19 @@ Vue.config.productionTip = false;
 
 import {
     Tabbar,
-    TabbarItem
+    TabbarItem,
+    NavBar,
+    Icon,
+    Swipe, 
+    SwipeItem,
 } from "vant";
 
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
+Vue.use(NavBar);
+Vue.use(Icon);
+Vue.use(Swipe);
+Vue.use(SwipeItem);
 
 
 
