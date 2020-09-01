@@ -3,37 +3,80 @@
     <van-nav-bar
       title="发现"
       :border="false"
+      fixed
+      placeholder
+      z-index="10"
     />
-    <van-tabs class="van-hairline--bottom">
+    <van-tabs class="van-hairline--bottom" @click="onClick" v-model="active">
       <van-tab 
       v-for="(item,index) in topNav" 
       :title="item" 
       :key="index"
       :border="true"
-
       >
       </van-tab>
     </van-tabs>
+    <van-swipe class="my-swipe"   ref="banner" @change="onChange" :loop="false" :show-indicators="false"	>
+      <van-swipe-item>
+        <FeaturedList/>
+      </van-swipe-item>
+      <van-swipe-item>
+           
+      </van-swipe-item>
+      <van-swipe-item>
+
+      </van-swipe-item>
+      <van-swipe-item>
+        
+        </van-swipe-item>  
+      <van-swipe-item>
+        
+        </van-swipe-item>  
+      <van-swipe-item>
+        
+        </van-swipe-item>  
+    </van-swipe>
 
   </div>
 </template>
 <script>
+import FeaturedList from '../components/FeaturedList'
 export default {
   data() {
     return {
-      topNav:['精选晒单','灵感','品牌','实体店','媒体报道','设计师']
+      topNav:['精选晒单','灵感','品牌','实体店','媒体报道','设计师'],
+      active:0
     }
   },
+  methods: {
+    onChange(index){
+      this.active = index
+    },
+    onClick(){
+      this.$refs.banner.swipeTo(this.active)
+    },
+
+  },
+  components:{
+    FeaturedList
+  }
+ 
 }
 </script>
 <style lang="stylus">
 .findings
+  display flex
+  flex-direction column
+  justify-content flex-start
+  align-items center
   .van-nav-bar__title
     font-weight bold
     font-size 16px
     color #000
   .van-tabs
-    padding-right 15px
+    margin-top 46pxs
+    width 100%
+    margin-bottom 23px
     .van-tabs__wrap
       .van-tabs__nav
         padding 0 0 15px 20px
@@ -46,4 +89,6 @@ export default {
             font-size 13px
             color #000
             font-weight bold
+  .my-swipe
+    width 355px
 </style>
