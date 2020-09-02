@@ -1,221 +1,230 @@
 <template>
-  <div class="handpick">
-      <!-- 轮播图  -->
-    <van-swipe class="my-swipe" 
-        :autoplay="0" 
-        indicator-color="white" 
-        :loop="false" >
-        <van-swipe-item v-for="(item,index) in imgsrc" :key="index"><img :src="item" alt=""></van-swipe-item>
-      </van-swipe>
-      <!-- 作者信息 -->
-      <div class="user">
-          <div class="headimg">
-              <img src="" alt="">
-          </div>
-          <div class="msg">              
-            <h3>meng</h3>
-            <h4>海口</h4>
-          </div>
+<!-- /分类-全屋系列 -->
+
+  <div class="museum" >
+      <div class="top">
+          <span class="left">&lt;</span>
+          <h2>美术馆全屋系列</h2>
       </div>
-      <div class="text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit illo architecto inventore obcaecati
-      </div>
-      <div class="bask">晒单商品</div>
-        <!-- 晒单商品下面的卡片 -->
-        <div class="card">
-            <div class="imgbox"><img src="" alt=""></div>
-            <div class="textbox">
-                <h3>蜻蜓椅</h3>
-                <p>轻盈不占地</p>
-                <h4>去看看 ></h4>
-            </div>
-        </div>
-        <!-- 看看相似商品 -->
-        <div class="bigbox">
-            <h3>看看相似商品</h3>
-            <div class="shopbox">
-                <div class="showbox" v-for="item in 2" :key="item">
-                    <div class="showimg">
-                        <img src="" alt="">
-                    </div>
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, et. A, laboriosam  recusandae atque earum saepe amet!</h4>
-                    <div class="showuser">
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <h4>11</h4>
-                        <p>111</p>
-                    </div>
+      <!-- 顶部图片 -->
+    <div class="imgbox">
+            <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt="">            
+        </div>        
+    <!-- 中间的选择按钮 -->
+    <div class="choose" :class="{fixed:height>100}">
+        <span @click="changesmall"></span>
+        <i @clisk="changebig"></i>
+    </div>
+        <!-- 商品列表 -->
+        <ul>
+            <li v-for="(item,index) in museumlist" :key="index">                
+                <div class="showimg">
+                    <img :src="item.img" alt="">
                 </div>
-            </div>
-        </div>
-  </div>
+                <h4>{{item.title}} </h4>
+                <p>￥{{item.sprice}} </p>
+                <span>￥{{item.oldsprice}} </span>
+                <div class="smallbox">
+                    <i></i>
+                </div>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>
-export default {
-    data(){
-        return{
-            imgsrc:["https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598888839253&di=0b05ce7ef818ea64bbaaf38770351c5c&imgtype=0&src=http%3A%2F%2Fa3.att.hudong.com%2F64%2F52%2F01300000407527124482522224765.jpg","https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598888839254&di=e994fa276a35f20ea6d58891ffd020ec&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F52%2F52%2F01200000169026136208529565374.jpg"],
+import axios from 'axios';
+    export default {
+        data(){
+            return{
+                height:0,
+                fixed:true,
+                museumlist:[],
+                ilist:[],
+            }
+        },
+        mounted(){
+            //整个页面的数据
+            axios.get('https://www.fastmock.site/mock/33a1db282ee306b6797173eda503c793/hangy/museum')
+            .then( (response)=> {
+                this.museumlist=response.data;
+            })
+            .catch(function (error) {
+                console.log(error) }),
+            window.addEventListener('scroll',()=>{
+                this.onscroll()
+            })           
+        },
+        methods:{
+            handleScrollx() {
+	        console.log(document.documentElement.scrollTop)
+            },
+            changesmall(){
+                console.log(1)
+                // document.querySelector('li').style.width="148px";
+                // document.querySelector('showimg').style.height="148px";
+            },
+            changebig(){
+                console.log(2)
+                // document.querySelector('li').style.width="100%";
+                // document.querySelector('showimg').style.height="200px";
+            },
+            onscroll(){
+                this.height=document.documentElement.scrollTop;
+               console.log(this.height)
+            }
+            
         }
     }
-
-}
 </script>
 
 <style lang="stylus" scoped>
-@import '../assets/style/discover.css';
-.my-swipe .van-swipe-item {
-    color: #fff;
-    font-size: 20px;
-    line-height: 150px;
-    text-align: center;
-    background-color: #39a9ed;
-  }
-/*作者信息*/
-  .user{
-      width:100%;
-      heihgt:50px;
-      display :flex;
-      .headimg{
-          width:30px;
-          height:30px;
-          border-radius:50%;
-          background:red;    
-          margin-left:8px;     
-          img{
-              width:100%;
-              height:100%;
-          } 
-      }
-      .msg{
-          display :flex;
-          flex-direction: column ;          
-          font-size:10px;
-          margin-left:10px;    
-          h3{
-              margin:2px 0 4px 0;
-          }
-      }
-  }
-/*轮播图下面的文字*/
-  .text{
-      font-size:12px;
-      padding:10px;
-      padding-bottom:20px;
-      line-height :18px;
-      border-bottom:4px solid #ccc;
-  }
-/*晒单商品*/
-  .bask{
-      font-size:14px;
-      font-weight :700;
-      margin:20px 0 4px 10px;
-  }
-//   晒单商品下面的卡片
-  .card{
-      width:100%;
-      display:flex;
-      padding:10px;
-      padding-bottom:8px;
-      border-bottom:4px solid #ccc;
-      .imgbox{
-          width:60px;
-          height:60px;
-          background :red;
-          img{
-              width:100%;
-              height:100%;
-          }
-      }
-      .textbox{
-          margin-left:10px;
-          padding-bottom:20px;
-          h3{
-              font-size:12px;
-              font-weight:500px;
-          }
-          p{
-              font-size:12px;
-              margin:6px 0 10px 0;
-          }
-          h4{
-              font-size:12px;
-              color:black;
-          }
-      }
-  }
-//   瀑布流
-.bigbox{
-    h3{
-        font-size:14px;
-        font-weight:600px;
-        padding:16px 0 4px 10px
+.museum{
+    width:100%;
+    height:136px;
+    position:relative;
+    // 顶部的图片
+    .imgbox{
+        width:100%;
+        height:100%;
+        background:red;    
+        img{
+            width:100%;
+            height:100%;
+        }
+    }  
+    // 顶部图片的文字  
+    .top{       
+        line-height:80px;
+        height:40px;
+        width:100%;
+        background:pink;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index :2;
+        .left{           
+            display :block;
+            width:28px;
+            height:28px;
+            color:black;
+            z-index :2;
+            font-size:18px;
+            position:fixed;
+            left:20px;
+            top:-20px;
+        }
+        h2{
+            position:fixed;
+            left:90px;
+            top:40px;
+            width: 170px;
+            height: 23px;
+            font-size: 24px;
+            font-family: PingFang SC;
+            font-weight: bold;
+            line-height: 20px;
+            // position:absolute;
+            // left:50%;
+            // top:50%;
+            // transform:translate(-50%,-50%);
+        }
     }
-    .shopbox{
-        padding:0 10px;
+    
+    // 中间的选择按钮    
+    .choose{
+        display:flex;
+        width:100%;
+        align-items:center;
+        height:52px;
+        background:#fff;
+        span{
+            width:16px;
+            height:16px;
+            margin:0 16px;
+            background:url(../assets/img/icon-2@2x.png)
+        }
+        i{
+            width:16px;
+            height:16px;
+            background:#ccc;
+            z-index :2;
+        }
+    }
+    .fixed{
+        position:fixed;
+        top:40px;
+        left:0;
+        background:#fff;
+        z-index :2;
+    }
+// 显示商品列表
+    ul{
         width:100%;
         display:flex;
-        justify-content :space-around;
-        .showbox{
-            width:170px;
-            height:280px;
-            background:pink;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        li{
+            width:184px;
+            position:relative;
+            padding-bottom:50px;
             .showimg{
+                height:184px;
                 width:100%;
-                // 此处高度需删除
-                height:200px;
-                background:red;
+                background:pink
                 img{
                     width:100%;
                     height:100%;
-                }           
+                }
             }
             h4{
-                margin-top:4px;
-                font-size:12px;
-                line-height:16px;
-                text-overflow :ellipsis;
-                height:32px;
-                overflow: hidden;
-                text-space:nowrap;
-                // display: -webkit-box;
-				// -webkit-box-orient: vertical;
-				// -webkit-line-clamp: 3;
-				// overflow: hidden;
+                width: 100%;
+                height: 13px;
+                font-size: 13px;
+                font-weight: bold;
+                line-height: 20px;
+                text-align:center;
+                margin:16px 0;
             }
-            .showuser{
-                width:100%;
-                height:30px;
-                margin-top:10px;
-                background:blue;
+            p{
+                width: 31px;
+                height: 10px;
+                font-size: 13px;
+                font-weight: bold;
+                color: #D93026;
+                line-height: 13px;
+                margin-left:50px;
+            }
+            span{
+                width: 25px;
+                height: 8px;
+                font-size: 11px;
+                font-weight: bold;
+                color: #000000;
+                line-height: 8px;
+                text-decoration:line-through;
+                position:absolute;
+                right:54px;
+                bottom:50px;
+            }
+            .smallbox{
+                width:50px;
+                height:10px;
+                position:absolute;
+                left:70px;
+                bottom:30px;
                 display:flex;
-                align-items:center;
-                span{
-                    display :block;
-                    width:14px;
-                    height:14px;
-                    border-radius: 50%;    
-                    float:left;  
-                    background:red;
-                    img{
-                        width:100%;
-                        height:100%;
-                    }              
-                }
-                h4{
-                    padding-top:6px;
-                    padding-left:6px;
-                    font-size:12px;
-                }
-                p{
-                    color:#ccc;
-                    font-size:12px;
-                    margin-left:110px;
+                justify-content :center;
+                i{               
+                    display block;
+                    width:10px;
+                    height:10px;
+                    border-radius:50%;
+                    background :red;
                 }
             }
+            
         }
-        
     }
 }
 </style>
