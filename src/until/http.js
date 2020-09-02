@@ -5,7 +5,7 @@ const instance = axios.create({
     baseURL: 'https://www.fastmock.site/mock/af8d601316dbeeb72255ee92bbadab25/api',
     timeout: 10000,
     headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
     },
 });
 // 添加请求拦截器

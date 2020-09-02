@@ -52,11 +52,25 @@ const routes = [{
         ]
     },
     {
+        // 收货地址点击进去的路由页面
+        path: '/address',
+        component: () =>
+            import ('../compoents/Mine/AddressAdd.vue')
+    },
+    {
         // 设置登录路径
         path: "/login",
         component: () =>
             import ('../views/Login'),
     },
+
+    {
+        //设置商品详情页
+        path:'/detail',
+        component:() =>
+            import('../views/Detailpage.vue')
+    },
+
     {
         path: "/test",
         component: () =>

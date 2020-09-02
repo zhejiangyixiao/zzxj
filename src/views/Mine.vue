@@ -34,14 +34,15 @@
 
     <!-- 下方单元格列表显示 -->
     <div class="mineMsg">
-      <van-cell v-for="(item,index) in mineList" :key="index" :title="item" is-link value />
-      <!-- <van-cell title="会员中心" is-link value="内容" />
+      <!-- <van-cell v-for="(item,index) in mineList" :key="index" :title="item" is-link value /> -->
+      <van-cell title="会员中心" is-link value="内容" />
       <van-cell title="我的优惠券" is-link />
       <van-cell title="我的礼品卡" is-link />
       <van-cell title="我的收藏" is-link />
       <van-cell title="在线客服" is-link />
-      <van-cell title="收货地址" is-link />
-      <van-cell title="设置" is-link />-->
+      <!-- <van-cell title="收货地址" is-link @click="toAddress" /> -->
+      <van-cell title="收货地址" is-link to="/address" />
+      <van-cell title="设置" is-link />
     </div>
   </div>
 </template>
@@ -71,17 +72,20 @@ export default {
           img: "https://img.yzcdn.cn/vant/apple-3.jpg",
           text: "晒单中心"
         }
-      ],
-      mineList: [
-        "会员中心",
-        "我的优惠券",
-        "我的礼品卡",
-        "我的收藏",
-        "在线客服",
-        "收货地址",
-        "设置"
       ]
+      // mineList: [
+      //   "会员中心",
+      //   "我的优惠券",
+      //   "我的礼品卡",
+      //   "我的收藏",
+      //   "在线客服",
+      //   "收货地址",
+      //   "设置"
+      // ]
     };
+  },
+  methods: {
+    
   }
 };
 </script>
@@ -136,10 +140,11 @@ export default {
 }
 
 .van-grid {
-  margin: 20px 0 0 0;
+  margin: 20px 0;
 
   p {
     font-size: 14px;
+    margin-top: 10px;
   }
 }
 </style>
