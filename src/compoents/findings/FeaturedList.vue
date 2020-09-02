@@ -1,6 +1,6 @@
 <template>
   <div class="jxsd">
-    <div class="wrapper">
+    <div class="wrap">
       <ul class="topNavList">
         <li
           v-for="(item,index) in list"
@@ -10,7 +10,7 @@
         >{{item}}</li>
       </ul>
     </div>
-    
+
     <div class="sdList">
       <ul class="ContentList">
         <li>
@@ -80,7 +80,6 @@
   </div>
 </template>
 <script>
-
 export default {
   data() {
     return {
@@ -93,22 +92,24 @@ export default {
       this.isActive = i;
     }
   },
-  mounted() {
-  }
+  mounted() {}
 };
 </script>
 <style lang="stylus">
 .jxsd {
   width: 100%;
 
-  .wrapper {
-    width: 90%;
-    overflow: hidden;
-
+  .wrap {
+    width 100%
+    overflow-x scroll
+    overflow-y hidden
+    display: -webkit-box;
+    white-space nowrap
     .topNavList {
       height: 27px;
+      width 500px
       display: inline-flex;
-
+      flex-wrap nowrap
       li {
         height: 27px;
         font-size: 11px;
@@ -117,11 +118,11 @@ export default {
         padding: 0 13px;
         margin-right: 13px;
       }
-    }
 
-    .active {
-      color: #FAFAFA;
-      background: #418E5A;
+      .active {
+        color: #FAFAFA;
+        background: #418E5A;
+      }
     }
   }
 

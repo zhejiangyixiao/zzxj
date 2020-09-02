@@ -12,11 +12,6 @@
       :show-indicators="false"
     >
       <van-swipe-item>
-        <div class="wrap">
-          <ul @mousemove.stop>
-            <li v-for="index in 10" :key="index">{{ index }}</li>
-          </ul>
-        </div>
         <!-- 精选菜单 -->
         <FeaturedList />
       </van-swipe-item>
@@ -68,21 +63,6 @@ export default {
 };
 </script>
 <style lang="stylus">
-.wrap {
-  width: 90%;
-  overflow: hidden;
-
-  ul {
-    display: inline-flex;
-    background: lightgreen;
-
-    li {
-      width: 50px;
-      height: 50px;
-    }
-  }
-}
-
 .findings {
   display: flex;
   flex-direction: column;
@@ -97,7 +77,7 @@ export default {
 
   .van-tabs {
     width: 100%;
-    margin-bottom: 23px;
+    // margin-bottom: 23px;
 
     .van-tabs__wrap {
       padding: 0 0 0 20px;

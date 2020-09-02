@@ -37,7 +37,9 @@ import {
     Row,
     GoodsAction,
     GoodsActionIcon,
-    GoodsActionButton
+    GoodsActionButton,
+    Empty,
+    Tag
 } from "vant";
 
 
@@ -69,6 +71,8 @@ Vue.use(Row);
 Vue.use(GoodsAction);
 Vue.use(GoodsActionButton);
 Vue.use(GoodsActionIcon);
+Vue.use(Empty);
+Vue.use(Tag);
 
 
 
