@@ -37,7 +37,8 @@ import {
     Row,
     GoodsAction,
     GoodsActionIcon,
-    GoodsActionButton
+    GoodsActionButton,
+    AddressList
 } from "vant";
 
 
@@ -69,7 +70,7 @@ Vue.use(Row);
 Vue.use(GoodsAction);
 Vue.use(GoodsActionButton);
 Vue.use(GoodsActionIcon);
-
+Vue.use(AddressList)
 
 
 new Vue({
