@@ -66,9 +66,9 @@ const routes = [{
 
     {
         //设置商品详情页
-        path:'/detail',
-        component:() =>
-            import('../views/Detailpage.vue')
+        path: '/detail',
+        component: () =>
+            import ('../views/Detailpage.vue')
     },
 
     {

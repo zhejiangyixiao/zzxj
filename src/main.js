@@ -39,7 +39,11 @@ import {
     GoodsActionIcon,
     GoodsActionButton,
     Empty,
-    Tag
+    Tag,
+    List,
+    PullRefresh,
+    SwipeCell,
+    Card
 } from "vant";
 
 
@@ -73,6 +77,11 @@ Vue.use(GoodsActionButton);
 Vue.use(GoodsActionIcon);
 Vue.use(Empty);
 Vue.use(Tag);
+Vue.use(List);
+Vue.use(PullRefresh);
+Vue.use(SwipeCell);
+Vue.use(Card);
+
 
 
 
