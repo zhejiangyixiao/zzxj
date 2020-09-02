@@ -1,5 +1,6 @@
 <template>
   <div class="jxsd">
+      <!-- 头部选项类型块 -->
       <ul class="topNavList">
         <li 
           v-for="(item,index) in list"
@@ -8,6 +9,7 @@
           @click="changeStyle(index)"
         >{{item}}</li>
       </ul>
+      <!-- 中间晒单 -->
       <div class="sdList">
         <ul class="ContentList">
             <li >
@@ -78,8 +80,9 @@ export default {
 </script>
 <style lang="stylus">
 .jxsd
-  width 500px
-  overflow hidden 
+  width 100%
+  overflow hidden
+  margin-top 20px
   .topNavList
     height 27px
     li
@@ -99,10 +102,11 @@ export default {
     width 355px
     margin-top 22px
     .ContentList
+      width 48%
       display flex
       flex-direction column
       li
-        width 170px
+        width 100%
         position relative
         color #000
         margin-bottom 43px

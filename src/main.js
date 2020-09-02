@@ -37,7 +37,7 @@ import {
     Row,
     GoodsAction,
     GoodsActionIcon,
-    GoodsActionButton
+    GoodsActionButton,
 } from "vant";
 
 

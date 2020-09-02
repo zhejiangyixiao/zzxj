@@ -7,18 +7,21 @@
       placeholder
       z-index="10"
     />
-    <van-tabs class="van-hairline--bottom" @click="onClick" v-model="active">
-      <van-tab 
-      v-for="(item,index) in topNav" 
-      :title="item" 
-      :key="index"
-      :border="true"
-      >
-      </van-tab>
-    </van-tabs>
-    <van-swipe class="my-swipe"   ref="banner" @change="onChange" :loop="false" :show-indicators="false"	>
+    <div class="tabbar">
+      <van-tabs class="van-hairline--bottom" @click="onClick" v-model="active">
+            <van-tab 
+            v-for="(item,index) in topNav" 
+            :title="item" 
+            :key="index"
+            :border="true"
+            >
+            </van-tab>
+      </van-tabs>
+    </div>
+    
+    <van-swipe class="my-swipe"   ref="banner" @change="onChange" :loop="false" :show-indicators="false" stop-propagation	>
       <van-swipe-item>
-        <!-- 精选菜单 -->
+        <!-- 精选晒单 -->
         <FeaturedList/>
       </van-swipe-item>
       <van-swipe-item>
@@ -79,22 +82,28 @@ export default {
     font-weight bold
     font-size 16px
     color #000
-  .van-tabs
-    width 100%
-    margin-bottom 23px
-    .van-tabs__wrap
-      padding 0 0 0 20px
-      .van-tabs__nav
-        padding 0 0 15px 0
-        .van-tab 
-          padding 0
-          margin-right 47px
-        .van-tabs__line
-            background-color #000  
-          .van-tab__text
-            font-size 13px
-            color #000
-            font-weight bold
+  .tabbar
+    position fixed
+    top 46px
+    left 0
+    z-index 10
+    .van-tabs
+      width 100%
+      margin-bottom 23px
+      .van-tabs__wrap
+        .van-tabs__nav
+          padding 0 0 15px 20px
+          .van-tab 
+            padding 0
+            margin-right 47px
+          .van-tabs__line
+              background-color #000  
+            .van-tab__text
+              font-size 13px
+              color #000
+              font-weight bold
   .my-swipe
     width 355px
+    .van-swipe-item
+      margin-top 51px
 </style>

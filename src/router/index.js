@@ -66,11 +66,16 @@ const routes = [{
 
     {
         //设置商品详情页
-        path:'/detail',
-        component:() =>
-            import('../views/Detailpage.vue')
+        path: '/detail',
+        component: () =>
+            import ('../views/Detailpage.vue')
     },
-
+    // 商品规格
+    {
+        path: '/specs',
+        component: () =>
+            import ('../views/DetailSpecs.vue')
+    },
     {
         // 未设置的路径 跳转404 页面
         path: "/*",
