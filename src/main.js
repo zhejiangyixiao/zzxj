@@ -30,7 +30,7 @@ import {
     Row,
     GoodsAction, 
     GoodsActionIcon, 
-    GoodsActionButton
+    GoodsActionButton,
 } from "vant";
 
 Vue.use(Tabbar);
