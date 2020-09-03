@@ -61,34 +61,12 @@
             <van-col span="6"><van-icon name="passed" />7日退款</van-col>
         </van-row>
         <!-- 已选规格 -->
-        <div class="specification">
-            <span class="specification-1">已选</span>
-            <span>灰绿</span>
-            <span>大款</span>
-            <span class="specification-ellipsis"><van-icon name="ellipsis" /></span>
-        </div>
-        <!-- 商品搭配 -->
-        <div class="match">
-            <span class="match-1">搭配</span>
-            <span class="match-2">优惠</span>
-            <span>设计师首选组合，最高可省￥253</span>
-            <span class="match-match"><van-icon name="arrow" /></span>
-        </div>
-        <!-- list 图片加文案 -->
-        <ul class="image-text">
-            <li>
-                <p>
-                    <img src="../assets/style/index-img/detail-1.png" alt="">
-                </p>
-                <p>
-                    <span class="image-text-1">现代的丰饶，空间的画作</span>
-                </p>
-                <p>
-                    <span class="image-text-2">画框式精细木框，NCS油画色彩，大小装饰银镜</span>
-                </p>
-            </li>
-        </ul>
-      </div>
+          <div class="specification">
+              <span class="specification-1">已选</span>
+              <span>灰绿</span>
+              <span>大款</span>
+              <span class="specification-ellipsis"><van-icon name="ellipsis" /></span>
+          </div>
       <!-- 商品导航 -->
       <van-goods-action left-arrow
         z-index=10>
@@ -113,7 +91,8 @@ export default {
         showAbs:false,
         opacityStyle:{
             opacity:1
-        }
+        },
+         showpop: false,
     };
   },
 
@@ -146,8 +125,9 @@ export default {
         }else{
             this.showAbs = false
         }
-    }
-  }
+    },
+  },
+
 };
 </script>
 <style lang='stylus' scoped>
@@ -237,6 +217,9 @@ export default {
     font-size 14px
     line-height 60px
 }
+.van-ceil{
+  padding 0
+}
 // 商品规格
 .specification{
     height 60px
@@ -312,7 +295,5 @@ export default {
 }
 .van-goods-action{
     border-bottom  1px solid #ccc
-    
-
 }
 </style>

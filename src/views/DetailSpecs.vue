@@ -1,6 +1,6 @@
 <template>
     <div class="showpop">
-      <van-cell is-link @click="showPopup">展示弹出层</van-cell>
+      <van-cell  @click="showPopup">ddsd</van-cell>
       <van-popup 
           v-model="show"
           position="bottom" 
@@ -62,7 +62,6 @@ export default {
     display flex
     flex-direction column
     justify-content flex-start
-    
     .van-icon
       font-size 16px
       color #000  
@@ -169,6 +168,4 @@ export default {
         line-height 100%
         color #fff
         border 0
-      
-        
 </style>
