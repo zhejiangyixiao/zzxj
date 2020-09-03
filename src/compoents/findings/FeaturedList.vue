@@ -2,10 +2,10 @@
   <div class="jxsd">
       <!-- 头部选项类型块 -->
       <ul class="topNavList">
-        <li 
+        <li
           v-for="(item,index) in list"
           :key="index"
-         :class="{active:isActive ===index}"
+          :class="{active:isActive ===index}"
           @click="changeStyle(index)"
         >{{item}}</li>
       </ul>
@@ -67,91 +67,113 @@
 export default {
   data() {
     return {
-      list:['全部','沙发','椅凳','柜架','床·床具','桌几'],
-      isActive:0
-    }
+      list: ["全部", "沙发", "椅凳", "柜架", "床·床具", "桌几"],
+      isActive: 0
+    };
   },
   methods: {
-    changeStyle(i){
-        this.isActive =i
+    changeStyle(i) {
+      this.isActive = i;
     }
   },
-}
+  mounted() {}
+};
 </script>
 <style lang="stylus">
-.jxsd
+.jxsd {
   width 100%
   overflow hidden
   margin-top 20px
-  .topNavList
-    height 27px
-    li
-      height 27px
-      font-size 11px
-      background #EEE
-      line-height 27px
-      padding 0 13px
-      margin-right 13px 
-      float left
-    .active
-      color #FAFAFA  
-      background #418E5A
-  .sdList
-    display flex
-    justify-content space-between
-    width 355px
-    margin-top 22px
-    .ContentList
-      width 48%
-      display flex
-      flex-direction column
-      li
-        width 100%
-        position relative
-        color #000
-        margin-bottom 43px
-        img 
-          width 100%
-        p
+  .topNavList {
+    height: 27px;
+    width 500px
+    display: inline-flex;
+    flex-wrap nowrap
+    li {
+      height: 27px;
+      font-size: 11px;
+      background: #EEE;
+      line-height: 27px;
+      padding: 0 13px;
+      margin-right: 13px;
+    }
+
+    .active {
+      color: #FAFAFA;
+      background: #418E5A;
+    }
+  }
+
+  .sdList {
+    display: flex;
+    justify-content: space-between;
+    width: 355px;
+    margin-top: 22px;
+
+    .ContentList {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        width: 170px;
+        position: relative;
+        color: #000;
+        margin-bottom: 43px;
+
+        img {
+          width: 100%;
+        }
+
+        p {
           width: 160px;
           word-break: break-all;
           text-overflow: ellipsis;
-          line-height 25px
+          line-height: 25px;
           display: -webkit-box;
           -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2; //这里是超出几行省略
+          -webkit-line-clamp: 2; // 这里是超出几行省略
           overflow: hidden;
-          font-size 13px
-          margin-bottom 35px
-        .tx
-          position absolute
-          left 0
-          bottom 0
-          width 103px
-          display flex
-          justify-content flex-start
-          align-items center
-          .txfz
-            width 16px
-            height 16px
-            border-radius 100%
-            border 1px solid #000
-            display inline-block
-          span 
-            font-size 13px
-            color #323232
-            line-height 13px
-            margin-left 7px
-            display inline-block
-            margin-top -3px
+          font-size: 13px;
+          margin-bottom: 35px;
+        }
 
-        .dd
-          display inline-block
-          position absolute
-          right 0
-          bottom 0
-          font-size 13px
-          color #A3A3A3
-      
-      
+        .tx {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 103px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          .txfz {
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            border: 1px solid #000;
+            display: inline-block;
+          }
+
+          span {
+            font-size: 13px;
+            color: #323232;
+            line-height: 13px;
+            margin-left: 7px;
+            display: inline-block;
+            margin-top: -3px;
+          }
+        }
+
+        .dd {
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          font-size: 13px;
+          color: #A3A3A3;
+        }
+      }
+    }
+  }
+}
 </style>

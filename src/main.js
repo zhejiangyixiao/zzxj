@@ -3,11 +3,14 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 // 引入reset 去除自带的样式，变成怪异盒模型
-import "./assets/style/reset.stylus"
+import "./assets/style/reset.stylus";
 // 新的rem适配
-import "amfe-flexible";
+import "amfe-flexible/index.js";
 Vue.config.productionTip = false;
 
+//监听手机滑动事件，引入的模块
+import VueTouch from 'vue-touch';
+Vue.use(VueTouch, { name: 'v-touch' })
 
 import {
     Tabbar,
@@ -38,6 +41,13 @@ import {
     GoodsAction,
     GoodsActionIcon,
     GoodsActionButton,
+    Empty,
+    Tag,
+    List,
+    PullRefresh,
+    SwipeCell,
+    Card,
+    AddressList
 } from "vant";
 
 
@@ -69,7 +79,13 @@ Vue.use(Row);
 Vue.use(GoodsAction);
 Vue.use(GoodsActionButton);
 Vue.use(GoodsActionIcon);
-
+Vue.use(Empty);
+Vue.use(Tag);
+Vue.use(List);
+Vue.use(PullRefresh);
+Vue.use(SwipeCell);
+Vue.use(Card);
+Vue.use(AddressList)
 
 
 new Vue({

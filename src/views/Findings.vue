@@ -26,51 +26,50 @@
       </van-swipe-item>
       <van-swipe-item>
         <!-- 灵感 -->
-           <inspiration />
+        <inspiration />
       </van-swipe-item>
-      <van-swipe-item>
-
-      </van-swipe-item>
-      <van-swipe-item>
-        
-        </van-swipe-item>  
-      <van-swipe-item>
-        
-        </van-swipe-item>  
-      <van-swipe-item>
-        
-        </van-swipe-item>  
+      <van-swipe-item></van-swipe-item>
+      <van-swipe-item></van-swipe-item>
+      <van-swipe-item></van-swipe-item>
+      <van-swipe-item></van-swipe-item>
     </van-swipe>
-
-
-    
   </div>
 </template>
 <script>
-import inspiration from '@/compoents/findings/inspiration';
-import FeaturedList from '@/compoents/findings/FeaturedList';
+import inspiration from "@/compoents/findings/inspiration";
+import FeaturedList from "@/compoents/findings/FeaturedList";
+
+import BScroll from "better-scroll";
+
 export default {
   data() {
     return {
-      topNav:['精选晒单','灵感','品牌','实体店','媒体报道','设计师'],
-      active:0
-    }
+      topNav: ["精选晒单", "灵感", "品牌", "实体店", "媒体报道", "设计师"],
+      active: 0
+    };
   },
   methods: {
-    onChange(index){
-      this.active = index
+    onChange(index) {
+      this.active = index;
     },
-    onClick(){
-      this.$refs.banner.swipeTo(this.active)
-    },
-
+    onClick() {
+      this.$refs.banner.swipeTo(this.active);
+    }
   },
-  components:{
+  components: {
     FeaturedList,
-    inspiration,
+    inspiration
+  },
+  mounted() {
+    this.$nextTick(() => {
+      let scroll = new BScroll(".wrap", {
+        scrollY: false,
+        scrollX: true,
+        click: true
+      });
+    });
   }
- 
-}
+};
 </script>
 <style lang="stylus">
 .findings

@@ -7,8 +7,7 @@ const routes = [{
         // 设置重定向 跳转主页面
         path: "/",
         redirect: "/index"
-    },
-    {
+    }, {
         // 刚开始的主页面  包含tabbar
         path: "/index",
         component: () =>
@@ -42,21 +41,38 @@ const routes = [{
                 // 设置 我的 路径
                 path: "/mine",
                 component: () =>
-                    import ("../views/Mine")
+                    import ('../views/Mine.vue'),
+                redirect: "/mymine",
+                children: [{
+                        path: '/mymine',
+                        component: () =>
+                            import ("../compoents/Mine/Mine.vue"),
+                    },
+                    {
+                        path: '/addressAdd',
+                        component: () =>
+                            import ('../compoents/Mine/AddressAdd.vue'),
+                    },
+                    {
+                        path: '/address',
+                        component: () =>
+                            import ('../compoents/Mine/Address.vue'),
+                    },
+                ]
             },
             {
                 path: '/findings',
                 component: () =>
-                    import ('../views/Findings.vue')
+                    import ('../views/Findings.vue'),
             }
         ]
     },
-    {
-        // 收货地址点击进去的路由页面
-        path: '/address',
-        component: () =>
-            import ('../compoents/Mine/AddressAdd.vue')
-    },
+    // {
+    //     // 收货地址点击进去的路由页面
+    //     path: '/address',
+    //     component: () =>
+    //         import ('../compoents/Mine/Address.vue'),
+    // },
     {
         // 设置登录路径
         path: "/login",
@@ -75,6 +91,11 @@ const routes = [{
         path: '/specs',
         component: () =>
             import ('../views/DetailSpecs.vue')
+    },
+    {
+        path: "/test",
+        component: () =>
+            import ('../views/test'),
     },
     {
         // 未设置的路径 跳转404 页面
