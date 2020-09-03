@@ -1,6 +1,6 @@
 <template>
   <div class="jxsd">
-    <div class="wrap">
+      <!-- 头部选项类型块 -->
       <ul class="topNavList">
         <li
           v-for="(item,index) in list"
@@ -9,74 +9,58 @@
           @click="changeStyle(index)"
         >{{item}}</li>
       </ul>
-    </div>
-
-    <div class="sdList">
-      <ul class="ContentList">
-        <li>
-          <img
-            src="https://dss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=2220142200,2504523423&fm=202&mola=new&crop=v1"
-            alt
-          />
-          <p>做工精致的美术馆陈列柜，颜色非常漂亮！放在餐倒计时卡的接口</p>
-          <div class="tx">
-            <div class="txfz"></div>
-            <span>潘潘</span>
-          </div>
-          <span class="dd">重庆</span>
-        </li>
-        <li>
-          <img
-            src="https://dss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=2220142200,2504523423&fm=202&mola=new&crop=v1"
-            alt
-          />
-          <p>做工精致的美术馆陈列柜，颜色非常漂亮！放在餐倒计时卡的接口</p>
-          <div class="tx">
-            <div class="txfz"></div>
-            <span>潘潘</span>
-          </div>
-          <span class="dd">重庆</span>
-        </li>
-        <li>
-          <img
-            src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2346604092,295321359&fm=26&gp=0.jpg"
-            alt
-          />
-          <p>做工精致的美术馆陈列柜，颜色非常漂亮！放在餐倒计时卡的接口</p>
-          <div class="tx">
-            <div class="txfz"></div>
-            <span>潘潘</span>
-          </div>
-          <span class="dd">重庆</span>
-        </li>
-      </ul>
-      <ul class="ContentList">
-        <li>
-          <img
-            src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=199184469,673028679&fm=26&gp=0.jpg"
-            alt
-          />
-          <p>做工精致的美术馆陈列柜，颜色非常漂亮！放在餐倒计时卡的接口</p>
-          <div class="tx">
-            <div class="txfz"></div>
-            <span>潘潘</span>
-          </div>
-          <span class="dd">重庆</span>
-        </li>
-        <li>
-          <img
-            src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2915767995,973876714&fm=26&gp=0.jpg"
-            alt
-          />
-          <p>做工精致的美术馆陈列柜，颜色非常漂亮！放在餐倒计时卡的接口</p>
-          <div class="tx">
-            <div class="txfz"></div>
-            <span>潘潘</span>
-          </div>
-          <span class="dd">重庆</span>
-        </li>
-      </ul>
-    </div>
+      <!-- 中间晒单 -->
+      <div class="sdList">
+        <ul class="ContentList">
+            <li >
+              <img src="https://dss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=2220142200,2504523423&fm=202&mola=new&crop=v1" alt="">
+              <p>做工精致的美术馆陈列柜，颜色非常漂亮！放在餐倒计时卡的接口</p>
+              <div class="tx">
+                  <div class="txfz"></div>
+                  <span>潘潘</span>
+              </div>
+              <span class="dd">重庆</span>
+            </li>
+            <li >
+              <img src="https://dss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=2220142200,2504523423&fm=202&mola=new&crop=v1" alt="">
+              <p>做工精致的美术馆陈列柜，颜色非常漂亮！放在餐倒计时卡的接口</p>
+              <div class="tx">
+                  <div class="txfz"></div>
+                  <span>潘潘</span>
+              </div>
+              <span class="dd">重庆</span>
+            </li>
+            <li >
+              <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2346604092,295321359&fm=26&gp=0.jpg" alt="">
+              <p>做工精致的美术馆陈列柜，颜色非常漂亮！放在餐倒计时卡的接口</p>
+              <div class="tx">
+                  <div class="txfz"></div>
+                  <span>潘潘</span>
+              </div>
+              <span class="dd">重庆</span>
+            </li>
+        </ul>
+        <ul class="ContentList">
+          <li >
+              <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=199184469,673028679&fm=26&gp=0.jpg" alt="">
+              <p>做工精致的美术馆陈列柜，颜色非常漂亮！放在餐倒计时卡的接口</p>
+              <div class="tx">
+                  <div class="txfz"></div>
+                  <span>潘潘</span>
+              </div>
+              <span class="dd">重庆</span>
+          </li>
+          <li >
+              <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2915767995,973876714&fm=26&gp=0.jpg" alt="">
+              <p>做工精致的美术馆陈列柜，颜色非常漂亮！放在餐倒计时卡的接口</p>
+              <div class="tx">
+                  <div class="txfz"></div>
+                  <span>潘潘</span>
+              </div>
+              <span class="dd">重庆</span>
+          </li>
+        </ul>
+      </div>
   </div>
 </template>
 <script>
@@ -97,32 +81,26 @@ export default {
 </script>
 <style lang="stylus">
 .jxsd {
-  width: 100%;
-
-  .wrap {
-    width 100%
-    overflow-x scroll
-    overflow-y hidden
-    display: -webkit-box;
-    white-space nowrap
-    .topNavList {
+  width 100%
+  overflow hidden
+  margin-top 20px
+  .topNavList {
+    height: 27px;
+    width 500px
+    display: inline-flex;
+    flex-wrap nowrap
+    li {
       height: 27px;
-      width 500px
-      display: inline-flex;
-      flex-wrap nowrap
-      li {
-        height: 27px;
-        font-size: 11px;
-        background: #EEE;
-        line-height: 27px;
-        padding: 0 13px;
-        margin-right: 13px;
-      }
+      font-size: 11px;
+      background: #EEE;
+      line-height: 27px;
+      padding: 0 13px;
+      margin-right: 13px;
+    }
 
-      .active {
-        color: #FAFAFA;
-        background: #418E5A;
-      }
+    .active {
+      color: #FAFAFA;
+      background: #418E5A;
     }
   }
 

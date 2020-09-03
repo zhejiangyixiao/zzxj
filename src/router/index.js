@@ -70,7 +70,12 @@ const routes = [{
         component: () =>
             import ('../views/Detailpage.vue')
     },
-
+    // 商品规格
+    {
+        path: '/specs',
+        component: () =>
+            import ('../views/DetailSpecs.vue')
+    },
     {
         path: "/test",
         component: () =>
