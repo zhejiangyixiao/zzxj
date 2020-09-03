@@ -8,8 +8,8 @@
             z-index=10
             @click-left="onClickLeft" />
         
-        <van-empty description="暂无订单" />
-        <div class="main" v-if="false">
+        <van-empty description="暂无订单"  v-if="false"/>
+        <div class="main" v-if="true">
             <!-- 订单号 -->
             <div class="odd">
                 <span class="add-title">单号：</span>

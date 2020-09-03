@@ -48,13 +48,7 @@ const routes = [{
                 path: '/findings',
                 component: () =>
                     import ('../views/Findings.vue')
-            },
-            {
-                // 未库付款页面
-                path:'/nonpayment',
-                component:()=>
-                    import('../views/Nonpayment.vue')
-            },
+            }
         ]
     },
     {
@@ -76,7 +70,12 @@ const routes = [{
             import('../views/Nonpayment.vue')
     },
 
-    
+    {
+        // 未设置的路径 跳转404 页面
+        path: "/*",
+        component: () =>
+            import ("../views/NotFound")
+    }
 ];
 
 const router = new VueRouter({
