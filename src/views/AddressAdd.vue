@@ -27,19 +27,20 @@
     <van-popup v-model="show" position="bottom" :style="{ height: '309px' }">
       <van-area
         :area-list="areaList"
+        :columns-placeholder="['请选择', '请选择', '请选择']"
         @change="changeAddr"
         @cancel="cancelChoose"
         @confirm="chooseThis"
       />
     </van-popup>
 
-    <van-button type="primary" size="large" to="/address">保存并使用</van-button>
+    <van-button type="primary" size="large" to="/address" @click="SendMsg">保存并使用</van-button>
   </div>
 </template>
 
 <script>
 // 地址选择js文件引入
-import Area from "../../assets/script/mineArea";
+import Area from "../assets/script/mineArea";
 
 export default {
   data() {
@@ -50,7 +51,8 @@ export default {
       addText: "",
       show: false,
       checked: false,
-      areaList: Area
+      areaList: Area,
+      sendMsgList: {}
     };
   },
 
@@ -69,7 +71,7 @@ export default {
     //选好地址后点击确定
     chooseThis() {
       this.show = false;
-      //选中地址成功后回显
+      //选中地址成功后回显--有bug，没选地区的时候会报错，我又找不到条件控制
       this.addCity =
         this.resAddr[0].name +
         "-" +
@@ -86,12 +88,25 @@ export default {
     },
     chooseCity() {
       this.show = true;
+    },
+    // 点击发送给后端提交的内容
+    SendMsg() {
+      this.sendMsgList = {
+        address_id: 1,
+        address_username: this.name,
+        address_phone: this.tel,
+        address_area:
+          this.resAddr[0].name + this.resAddr[1].name + this.resAddr[2].name,
+        address_detail: this.addText,
+        isDefault: this.checked ? "0" : "1"
+      };
+      console.log(this.sendMsgList);
     }
   }
 };
 </script>
 <style lang='stylus' scoped>
-@import '../../assets/style/mineStyle.css';
+@import '../assets/style/mineStyle.css';
 
 .add-container {
   position: absolute;

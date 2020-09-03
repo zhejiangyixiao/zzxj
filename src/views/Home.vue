@@ -53,7 +53,7 @@
             <p>27国100+设计大师签名作品，五年百万用户</p>
             <div class="make-shop-nav">
               <!-- 轮播图二 -->
-              <div class="custom-indicator">{{ current2 + 1 }}/{{arrSwiper2.length}}</div>
+              <div class="custom-indicator">{{ current2+1 }}/{{arrSwiper2.length}}</div>
             </div>
           </div>
           <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" @change="onChange2">
@@ -89,10 +89,10 @@
 
             <!-- 轮播图三 -->
             <div class="make-shop-nav">
-              <div class="custom-indicator">{{ current2 + 1 }}/{{arrSwiper3.length}}</div>
+              <div class="custom-indicator">{{ current3 + 1 }}/{{arrSwiper3.length}}</div>
             </div>
           </div>
-          <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" @change="onChange2">
+          <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" @change="onChange3">
             <!-- 轮播图内容 -->
             <van-swipe-item v-for="(item,index) in arrSwiper3" :key="index">
               <div>

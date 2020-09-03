@@ -42,23 +42,6 @@ const routes = [{
                 path: "/mine",
                 component: () =>
                     import ('../views/Mine.vue'),
-                redirect: "/mymine",
-                children: [{
-                        path: '/mymine',
-                        component: () =>
-                            import ("../compoents/Mine/Mine.vue"),
-                    },
-                    {
-                        path: '/addressAdd',
-                        component: () =>
-                            import ('../compoents/Mine/AddressAdd.vue'),
-                    },
-                    {
-                        path: '/address',
-                        component: () =>
-                            import ('../compoents/Mine/Address.vue'),
-                    },
-                ]
             },
             {
                 path: '/findings',
@@ -67,12 +50,31 @@ const routes = [{
             }
         ]
     },
-    // {
-    //     // 收货地址点击进去的路由页面
-    //     path: '/address',
-    //     component: () =>
-    //         import ('../compoents/Mine/Address.vue'),
-    // },
+
+    {
+        // 添加收货地址
+        path: "/addressAdd",
+        component: () =>
+            import ('../views/AddressAdd.vue'),
+    },
+    {
+        // 修改收货地址
+        path: '/address',
+        component: () =>
+            import ('../views/Address.vue'),
+    },
+    {
+        // mine-设置
+        path: '/mineset',
+        component: () =>
+            import ('../views/MineSet.vue'),
+    },
+    {
+        // mine-其他点击跳转同一页面
+        path: '/mineother',
+        component: () =>
+            import ('../views/MineOther.vue'),
+    },
     {
         // 设置登录路径
         path: "/login",

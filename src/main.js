@@ -47,7 +47,8 @@ import {
     PullRefresh,
     SwipeCell,
     Card,
-    AddressList
+    AddressList,
+    Switch
 } from "vant";
 
 
@@ -86,7 +87,7 @@ Vue.use(PullRefresh);
 Vue.use(SwipeCell);
 Vue.use(Card);
 Vue.use(AddressList)
-
+Vue.use(Switch);
 
 new Vue({
     router,
