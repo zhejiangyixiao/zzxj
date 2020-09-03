@@ -63,6 +63,12 @@ const routes = [{
         component:() =>
             import('../views/Detailpage.vue')
     },
+    {
+        // 未库付款页面
+        path:'/nonpayment',
+        component:()=>
+            import('../views/Nonpayment.vue')
+    },
 
     {
         // 未设置的路径 跳转404 页面

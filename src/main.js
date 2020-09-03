@@ -31,6 +31,10 @@ import {
     GoodsAction, 
     GoodsActionIcon, 
     GoodsActionButton,
+    Dialog,
+    Card,
+    Button,
+    Empty,
 } from "vant";
 
 Vue.use(Tabbar);
@@ -54,7 +58,10 @@ Vue.use(Row);
 Vue.use(GoodsAction);
 Vue.use(GoodsActionButton);
 Vue.use(GoodsActionIcon);
-
+Vue.use(Dialog);
+Vue.use(Card);
+Vue.use(Button);
+Vue.use(Empty);
 
 
 new Vue({
