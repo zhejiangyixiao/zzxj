@@ -4,7 +4,7 @@
     <!-- 头部 -->
     <van-nav-bar title="添加新收货地址" left-arrow @click-left="onClickLeft" />
 
-    <!-- 输入地址信息 引得我改不好样式，自己写的-->    
+    <!-- 输入地址信息 引得我改不好样式，自己写的-->
 
     <van-cell-group>
       <van-field v-model="name" label="收货人" placeholder="请输入姓名" />
@@ -35,7 +35,7 @@
       />
     </van-popup>
 
-    <van-button type="primary" size="large">保存并使用</van-button>
+    <van-button type="primary" size="large" to="/address">保存并使用</van-button>
   </div>
 </template>
 
@@ -56,7 +56,7 @@ export default {
         },
         city_list: {
           110100: "北京市",
-          120100: "天津市",
+          120100: "天津市"
         },
         county_list: {
           110101: "东城区",
@@ -120,7 +120,8 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #eee;
+  background: #F6F6F6;
+  z-index: 10;
 }
 
 .add-container .van-nav-bar .van-icon {
@@ -134,21 +135,33 @@ export default {
 
 .van-checkbox {
   padding: 15px;
-  background-color: #eee;
+  background: #F6F6F6;
 }
 
 .van-checkbox p {
-  font-size: 16px;
-  color: #646566;
+  width: 82px;
+  height: 13px;
+  font-size: 13px;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #D0D0D0;
+  line-height: 20px;
 }
 
 .van-button {
+  width: 340px;
+  height: 51px;
   background-color: #000;
   border: #666;
-  color: #fff;
-  font-size: 18px;
   position: absolute;
-  bottom: 0;
+  bottom: 33px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FEFEFE;
+  line-height: 20px;
 }
 </style>
 

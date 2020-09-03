@@ -42,21 +42,38 @@ const routes = [{
                 // 设置 我的 路径
                 path: "/mine",
                 component: () =>
-                    import ("../views/Mine")
+                    import ('../views/Mine.vue'),
+                redirect: "/mymine",
+                children: [{
+                        path: '/mymine',
+                        component: () =>
+                            import ("../compoents/Mine/Mine.vue"),
+                    },
+                    {
+                        path: '/addressAdd',
+                        component: () =>
+                            import ('../compoents/Mine/AddressAdd.vue'),
+                    },
+                    {
+                        path: '/address',
+                        component: () =>
+                            import ('../compoents/Mine/Address.vue'),
+                    },
+                ]
             },
             {
                 path: '/findings',
                 component: () =>
-                    import ('../views/Findings.vue')
+                    import ('../views/Findings.vue'),
             }
         ]
     },
-    {
-        // 收货地址点击进去的路由页面
-        path: '/address',
-        component: () =>
-            import ('../compoents/Mine/AddressAdd.vue')
-    },
+    // {
+    //     // 收货地址点击进去的路由页面
+    //     path: '/address',
+    //     component: () =>
+    //         import ('../compoents/Mine/Address.vue'),
+    // },
     {
         // 设置登录路径
         path: "/login",

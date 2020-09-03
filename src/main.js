@@ -43,7 +43,8 @@ import {
     List,
     PullRefresh,
     SwipeCell,
-    Card
+    Card,
+    AddressList
 } from "vant";
 
 
@@ -81,8 +82,7 @@ Vue.use(List);
 Vue.use(PullRefresh);
 Vue.use(SwipeCell);
 Vue.use(Card);
-
-
+Vue.use(AddressList)
 
 
 new Vue({
