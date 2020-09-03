@@ -3,9 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 // 引入reset 去除自带的样式，变成怪异盒模型
-import "./assets/style/reset.stylus"
+import "./assets/style/reset.stylus";
 // 新的rem适配
-import "amfe-flexible";
+import "amfe-flexible/index.js";
 Vue.config.productionTip = false;
 
 
