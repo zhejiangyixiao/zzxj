@@ -8,6 +8,9 @@ import "./assets/style/reset.stylus";
 import "amfe-flexible/index.js";
 Vue.config.productionTip = false;
 
+//监听手机滑动事件，引入的模块
+import VueTouch from 'vue-touch';
+Vue.use(VueTouch, { name: 'v-touch' })
 
 import {
     Tabbar,
