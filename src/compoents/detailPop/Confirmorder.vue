@@ -63,7 +63,20 @@
             <div class="tophead">
               <span>单品</span>
             </div>
-            <li></li>
+            <li>
+              <div class="imgbx">
+
+              </div>
+              <div class="rightT">
+                <p class="title">西竹躺椅</p>
+                <p class="types">蓝绿</p>
+                <p class="gettime">预计2020-09-03前发货</p>
+                <div class="priceO">
+                    <span>￥4998</span>
+                    <span>x1</span>
+                </div>
+              </div>
+            </li>
         </div>
       </div>
       <!-- 底部结算 -->
@@ -223,7 +236,6 @@ export default {
           background-size 16px
         span 
           margin-left 12px 
-
   .increase-remarks
     width 100%
     height 183px
@@ -246,6 +258,7 @@ export default {
     width 353px
     margin-top 33px
     margin-left 11px
+    height 300px
     p
       font-size 20px
       color #232323
@@ -260,12 +273,42 @@ export default {
         font-size 17px
         color #232323
         padding-top 16px
+        padding-left 13px
       li 
         width 100%
         height 121px
         border-top 1px solid #909090
         background #fff
-        
+        padding-left 25px
+        padding-top 11px
+        padding-bottom 20px
+        display flex
+        .imgbx 
+          width 95px
+          height 95px
+          border 1px solid #ccc
+        .rightT
+          flex  1
+          
+          margin-left 11px
+          display flex
+          flex-direction column
+          justify-content space-between
+          .title
+            font-size 15px
+            font-weight bold
+          .types
+            font-size 13px
+            color #909090
+          .gettime  
+            font-size 13px
+            color #909090
+          .priceO
+            width 100%
+            display flex
+            font-size 13px
+            justify-content space-between
+            
   .js
     width 100%
     margin-top 18px
