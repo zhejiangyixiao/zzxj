@@ -1,6 +1,8 @@
 <template>
-    <div class="showpop">
-      <van-cell  @click="showPopup">ddsd</van-cell>
+    <div class="showAddPop">
+      <van-cell  @click="showPopup">
+          加入购物车
+      </van-cell>
       <van-popup 
           v-model="show"
           position="bottom" 
@@ -14,6 +16,7 @@
                <p>￥1999</p>
               <div class="yh">优惠</div>
               <span>组合购买更优惠</span>
+              <van-icon name="arrow" :size="13" />
             </div>
           </div>
           <div class="middle">
@@ -32,10 +35,7 @@
             ></div>
           </div>
           <p class="tz">今天下单，将与2020-09-03前发货，大件家具会致电确认</p>
-          <div class="btnList">
-            <button class="mustbuy">立即购买</button>
-            <button class="addcart">加入购物车</button>
-          </div>
+          <button>确认加入</button>
         </van-popup>
 
     </div>
@@ -55,8 +55,20 @@ export default {
 }
 </script>
 <style lang="stylus">
-.showpop
-  overflow-y hidden
+.showAddPop
+  height 100%
+  .van-cell
+    width 124px
+    padding 0
+    height 100%
+    .van-cell__value
+      display flex
+      align-items center
+      justify-content center
+      font-size 13px
+      font-weight bold
+      color #FFF
+      background #000
   .van-popup
     width 100%
     display flex
@@ -76,7 +88,6 @@ export default {
         height 74px
         border 1px solid #ccc
       .zhPrice
-        width 150px
         margin-top 34px
         margin-left 10px
         .yh
@@ -96,6 +107,7 @@ export default {
           font-size 15px
           color #000
           margin-left 12px
+          margin-right 5px
     .middle
       margin-top 20px
       width 348px
@@ -145,27 +157,16 @@ export default {
       font-size 13px
       color #616161
       margin-left 16px
-    .btnList
+    button 
       width 100%
-      height 49px
-      position absolute
+      height 48px
+      background #000
+      text-align center
+      line-height 48px
+      position fixed
       left 0
       bottom 0
-      font-size 15px
-      .mustbuy
-        width 50%
-        height 100%
-        background #fff
-        text-align center
-        line-height 100%
-        border 0
-        border-top 1px solid #ccc
-      .addcart
-        width 50%
-        height 100%
-        background #000
-        text-align center
-        line-height 100%
-        color #fff
-        border 0
+      font-size 13px
+      color #FFF
+
 </style>

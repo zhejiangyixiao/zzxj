@@ -83,7 +83,7 @@ export default {
 .jxsd {
   width 100%
   overflow hidden
-  margin-top 20px
+  margin-top 10px
   .topNavList {
     height: 27px;
     width 500px

@@ -38,9 +38,6 @@ import {
     Area,
     Col,
     Row,
-    GoodsAction,
-    GoodsActionIcon,
-    GoodsActionButton,
     Empty,
     Tag,
     List,
@@ -76,9 +73,6 @@ Vue.use(Button);
 Vue.use(Area);
 Vue.use(Col);
 Vue.use(Row);
-Vue.use(GoodsAction);
-Vue.use(GoodsActionButton);
-Vue.use(GoodsActionIcon);
 Vue.use(Empty);
 Vue.use(Tag);
 Vue.use(List);

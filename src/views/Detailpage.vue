@@ -14,8 +14,8 @@
             </div>
         </div>
       <div class="box" >
-      <!-- <div class="box" v-on:scroll.passive="onScroll"> -->
-          <!-- 头部导航 -->
+                <!-- <div class="box" v-on:scroll.passive="onScroll"> -->
+        <!-- 头部导航 -->
         <van-nav-bar
             :border='false'
             left-arrow
@@ -26,8 +26,6 @@
                 <van-icon name="ellipsis" size="18" />
             </template>
         </van-nav-bar>
-        
-        
         <!-- 商品轮播图 -->
         <van-swipe  @change="onChange">
             <van-swipe-item>1</van-swipe-item>
@@ -61,28 +59,49 @@
             <van-col span="6"><van-icon name="passed" />7日退款</van-col>
         </van-row>
         <!-- 已选规格 -->
-          <div class="specification">
-              <span class="specification-1">已选</span>
-              <span>灰绿</span>
-              <span>大款</span>
-              <span class="specification-ellipsis"><van-icon name="ellipsis" /></span>
-          </div>
-      <!-- 商品导航 -->
-      <van-goods-action left-arrow
-        z-index=10>
-          <span><van-goods-action-icon icon="chat-o" text="" /></span>
-        <span><van-goods-action-icon icon="shop-o" text="" /></span>
-        
-        <van-goods-action-button color="#fff" type="danger" text="立即购买" 
-        style="color: unset"
-        />
-        <van-goods-action-button color="#000" type="warning" text="加入购物车" />
-      </van-goods-action>
+         <DetailSpecs/>
+        <!-- 商品搭配 -->
+        <div class="match">
+            <span class="match-1">搭配</span>
+            <span class="match-2">优惠</span>
+            <span>设计师首选组合，最高可省￥253</span>
+            <span class="match-match"><van-icon name="arrow" /></span>
+        </div>
+        <!-- list 图片加文案 -->
+        <ul class="image-text">
+            <li>
+                <p>
+                    <img src="../assets/style/index-img/detail-1.png" alt="">
+                </p>
+                <p>
+                    <span class="image-text-1">现代的丰饶，空间的画作</span>
+                </p>
+                <p>
+                    <span class="image-text-2">画框式精细木框，NCS油画色彩，大小装饰银镜</span>
+                </p>
+            </li>
+        </ul>
+      </div>
+      <!-- 底部选择导航 -->
+      <div class="footer-nav van-hairline--top">
+          <span class="van-hairline--right" >
+            <van-icon name="service-o"  :size="20" color="#000"/>
+          </span>
+          <span class="van-hairline--right">
+            <van-icon name="cart-o" :size="20" color="#000"/>
+          </span>
+          <QuitBuy/>
+          <AddCart/>
+      </div>
+
   </div>
 
 </template>
 
 <script>
+import DetailSpecs from '../compoents/detailPop/DetailSpecs'
+import QuitBuy from '../compoents/detailPop/QuitBuy'
+import AddCart from '../compoents/detailPop/AddCart'
 export default {
   data() {
     return {
@@ -92,11 +111,15 @@ export default {
         opacityStyle:{
             opacity:1
         },
-         showpop: false,
     };
   },
+  
 
-  components: {},
+  components: {
+    DetailSpecs,
+    QuitBuy,
+    AddCart
+  },
 
   computed: {},
 
@@ -104,6 +127,7 @@ export default {
       document.addEventListener('scroll', () => {
          this.onScroll()
       }, true);
+
   },
 
   methods: {
@@ -217,29 +241,6 @@ export default {
     font-size 14px
     line-height 60px
 }
-.van-ceil{
-  padding 0
-}
-// 商品规格
-.specification{
-    height 60px
-    border-bottom  1px solid #ccc
-    font-size 14px
-    margin-top 5px
-    span {
-        line-height 60px
-        margin-right  10px
-    }
-}
-.specification .specification-1{
-    margin-right  20px
-    font-weight 900
-}
-.specification .specification-ellipsis{
-    font-size 30px
-    float right
-    margin-top 5px
-}
 // 商品搭配
 .match{
     height 60px
@@ -282,18 +283,27 @@ export default {
     color #000
 }
 
-// 商品导航
-.van-goods-action-button--last{
-    border-radius 0
+// 底部选择导航
+.footer-nav{
+  width 100%
+  height 49px
+  position fixed
+  bottom 0
+  left 0
+  background #FFF
+  z-index 10 
+  display flex
+  align-items center
+  span{
+    display inline-block
+    text-align center
+    width 62px
+    height 31px
+  }
+  
+
+  
+
 }
-.van-goods-action-button--first{
-    color #000
-    border-radius 0
-}
-.van-goods-action-icon{
-    border-right 1px solid #ccc
-}
-.van-goods-action{
-    border-bottom  1px solid #ccc
-}
+
 </style>
