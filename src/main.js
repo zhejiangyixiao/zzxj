@@ -12,6 +12,11 @@ Vue.config.productionTip = false;
 import VueTouch from 'vue-touch';
 Vue.use(VueTouch, { name: 'v-touch' })
 
+
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/css/swiper.css'
+Vue.use(VueAwesomeSwiper);
+
 import {
     Tabbar,
     TabbarItem,

@@ -1,40 +1,80 @@
 <template>
     <div class="test">
-        <div class="wrap">
-            <ul>
-                <li v-for="index in 10" :key="index">
-                    {{ index }}
-                </li>
-            </ul>
-        </div>
+        <!-- <van-swipe class="my-swipe" ref="banner"  indicator-color="white" :loop="false" @change="onChange" width="275">
+            <van-swipe-item>1</van-swipe-item>
+            <van-swipe-item class="odd">2</van-swipe-item>
+            <van-swipe-item>3</van-swipe-item>
+            <van-swipe-item class="odd">4</van-swipe-item>
+        </van-swipe> -->
+
+
+
+        <!-- 轮播图 -->
+        <swiper ref="mySwiper" :options="swiperOptions">
+            <div class="swiper-slide" v-for="(item, index) in bannerlist" :key="index">
+            <img :src="item.src" alt="">
+            </div>
+            <div class="swiper-pagination" slot="pagination"></div>
+        </swiper>
+
     </div>
 </template>
 
 <script>
-import BScroll from "better-scroll";
 
     export default {
+        data() {
+            return {
+                swiperOptions: {
+                    lidesPerView: 'auto',
+                    centeredSlides: true,
+                    watchSlidesProgress: true,
+                    paginationClickable: true,
+                    slidesPerView: 1.1,
+                    spaceBetween: 10,
+                    loop: false,
+                    autoplay: false,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type : 'fraction',
+                    }
+                },
+                count:1,
+                bannerlist:[
+                    {
+                    src: require("../assets/images/banner01@2x.png")
+                    },
+                    {
+                    src: require("../assets/images/banner01@2x.png")
+                    },
+                    {
+                    src: require("../assets/images/banner01@2x.png")
+                    },
+                    {
+                    src: require("../assets/images/banner01@2x.png")
+                    },
+                    {
+                    src: require("../assets/images/banner01@2x.png")
+                    }
+                ]
+            }
+        },
         mounted(){
-            this.$nextTick(() => {
-                let scroll = new BScroll(".wrap", {
-                    scrollY: false,
-                    scrollX: true,
-                    click: true
-                });
-            });
-        }
+            console.log(this.$refs.banner.$el.firstChild.style.cssText);
+        },
+        methods: {
+            
+        },
     }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .test
-    .wrap
-        width 90%
-        overflow hidden
-        ul 
-            display inline-flex
-            background lightgreen
-            li
-                width 50px
-                height 50px
+    .swiper-container
+        width 100%
+        height 200px
+        img
+            width 100%
+            height 100%
+    
 </style>
