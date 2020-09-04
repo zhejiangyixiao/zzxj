@@ -47,7 +47,10 @@ import {
     PullRefresh,
     SwipeCell,
     Card,
-    AddressList
+    AddressList,
+    DatetimePicker,
+    ActionSheet,
+    Form,
 } from "vant";
 
 
@@ -85,7 +88,11 @@ Vue.use(List);
 Vue.use(PullRefresh);
 Vue.use(SwipeCell);
 Vue.use(Card);
-Vue.use(AddressList)
+Vue.use(AddressList);
+Vue.use(DatetimePicker);
+Vue.use(ActionSheet);
+Vue.use(Form);
+
 
 
 new Vue({
