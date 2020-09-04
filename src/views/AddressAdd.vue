@@ -34,7 +34,7 @@
       />
     </van-popup>
 
-    <van-button type="primary" size="large" to="/address" @click="SendMsg">保存并使用</van-button>
+    <van-button type="primary" size="large" @click="SendMsg">保存并使用</van-button>
   </div>
 </template>
 
@@ -52,6 +52,7 @@ export default {
       show: false,
       checked: false,
       areaList: Area,
+      resAddr: "",
       sendMsgList: {}
     };
   },
@@ -66,19 +67,27 @@ export default {
     changeAddr(picker) {
       //value=0改变省，1改变市，2改变区
       let val = picker.getValues();
+      console.log(val);
       this.resAddr = val;
     },
     //选好地址后点击确定
     chooseThis() {
       this.show = false;
-      //选中地址成功后回显--有bug，没选地区的时候会报错，我又找不到条件控制
-      this.addCity =
-        this.resAddr[0].name +
-        "-" +
-        this.resAddr[1].name +
-        "-" +
-        this.resAddr[2].name;
-      console.log(this.resAddr, "即将传给后端的省市区信息");
+      //选中地址成功后回显--bug解决，绝美
+
+      if (!this.resAddr) {
+        alert("请正确选择城市");
+      } else if (this.resAddr[0] && this.resAddr[1] && this.resAddr[2]) {
+        this.addCity =
+          this.resAddr[0].name +
+          "-" +
+          this.resAddr[1].name +
+          "-" +
+          this.resAddr[2].name;
+        console.log(this.resAddr, "即将传给后端的省市区信息");
+      } else {
+        alert("请正确选择城市");
+      }
     },
     cancelChoose() {
       this.show = false;
@@ -91,16 +100,21 @@ export default {
     },
     // 点击发送给后端提交的内容
     SendMsg() {
-      this.sendMsgList = {
-        address_id: 1,
-        address_username: this.name,
-        address_phone: this.tel,
-        address_area:
-          this.resAddr[0].name + this.resAddr[1].name + this.resAddr[2].name,
-        address_detail: this.addText,
-        isDefault: this.checked ? "0" : "1"
-      };
-      console.log(this.sendMsgList);
+      if (!this.resAddr) {
+        alert("请填写完整信息");
+      } else {
+        this.$router.push("/address");
+        this.sendMsgList = {
+          address_id: 1,
+          address_username: this.name,
+          address_phone: this.tel,
+          address_area:
+            this.resAddr[0].name + this.resAddr[1].name + this.resAddr[2].name,
+          address_detail: this.addText,
+          isDefault: this.checked ? "0" : "1"
+        };
+        console.log(this.sendMsgList);
+      }
     }
   }
 };

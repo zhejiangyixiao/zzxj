@@ -5,9 +5,8 @@
     <van-nav-bar title="设置" left-arrow @click-left="onClickLeft" />
 
     <!-- options -->
-    <van-cell title="个人资料" is-link />
+    <van-cell title="个人资料" is-link to="/mineData" />
     <van-cell title="账户安全" is-link />
-    <van-cell title="消息推送提醒" is-link />
     <van-cell title="消息推送提醒">
       <template #right-icon>
         <van-switch v-model="checked" active-color="green" size="22" />
