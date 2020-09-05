@@ -115,7 +115,6 @@ export default {
           position absolute
           left 0
           bottom 0
-          width 103px
           display flex
           justify-content flex-start
           align-items center
@@ -137,6 +136,10 @@ export default {
             margin-left 7px
             display inline-block
             margin-top -3px
+            width 90px
+            text-overflow ellipsis
+            white-space nowrap
+            overflow hidden
         .dd 
           display inline-block
           position absolute
