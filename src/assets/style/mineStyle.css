@@ -41,3 +41,11 @@
 .van-picker__cancel {
     color: #333;
 }
+
+.van-tab__text {
+    font-size: 13px;
+    font-family: PingFang;
+    font-weight: 800;
+    color: #232323;
+    line-height: 20px;
+}

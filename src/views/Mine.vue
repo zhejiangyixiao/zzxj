@@ -37,7 +37,7 @@
     <!-- 下方单元格列表显示 -->
     <div class="mineMsg">
       <van-cell title="会员中心" is-link value="1" />
-      <van-cell title="我的优惠券" is-link to="/mineother" />
+      <van-cell title="我的优惠券" is-link to="/discount" />
       <van-cell title="我的礼品卡" is-link  />
       <van-cell title="我的收藏" is-link />
       <van-cell title="在线客服" is-link />

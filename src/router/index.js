@@ -70,10 +70,10 @@ const routes = [{
             import ('../views/MineSet.vue'),
     },
     {
-        // mine-其他点击跳转同一页面
-        path: '/mineother',
+        // mine-优惠券
+        path: '/discount',
         component: () =>
-            import ('../views/MineOther.vue'),
+            import ('../views/MineDiscount.vue'),
     },
     {
         // 设置登录路径
