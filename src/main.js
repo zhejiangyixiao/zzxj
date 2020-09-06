@@ -49,8 +49,6 @@ import {
     Card,
     AddressList,
     DatetimePicker,
-    ActionSheet,
-    Form,
 } from "vant";
 
 
@@ -90,8 +88,6 @@ Vue.use(SwipeCell);
 Vue.use(Card);
 Vue.use(AddressList);
 Vue.use(DatetimePicker);
-Vue.use(ActionSheet);
-Vue.use(Form);
 
 
 

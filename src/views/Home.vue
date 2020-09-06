@@ -57,7 +57,7 @@
               <div class="custom-indicator">{{ current2 + 1 }}/{{arrSwiper2.length}}</div>
             </div>
           </div>
-          <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" @change="onChange2">
+          <van-swipe class="my-swipe" :autoplay="0" indicator-color="white" @change="onChange2">
             <!-- 轮播图内容 -->
             <van-swipe-item v-for="(item,index) in arrSwiper2" :key="index">
               <div>
@@ -94,7 +94,7 @@
             </div>
           </div>
           <!-- 轮播图内容 -->
-          <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" @change="onChange3">
+          <van-swipe class="my-swipe" :autoplay="0" indicator-color="white" @change="onChange3">
             <van-swipe-item v-for="(item,index) in arrSwiper3" :key="index">
               <div>
                 <img :src="item.img" alt />
