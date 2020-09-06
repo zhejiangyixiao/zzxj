@@ -1,23 +1,24 @@
 .my-swipe .van-swipe-item[data-v-fae5bece] {
-    background-color: #fff !important;
+  background-color: #fff;
 }
 
 .my-swipe .van-swipe-item[data-v-fae5bece] img {
-    width: 100%;
-}
-
-.van-swipe__indicator {
-    background-color: #ccc !important;
+  width: 100%;
 }
 
 .handpick .van-swipe__indicator--active {
-    background-color: black !important;
+  background-color: black !important;
 }
 
 .van-swipe__indicators {
-    bottom: 10px !important;
+  bottom: -15px !important;
+  z-index: 2;
+}
+
+.van-swipe__indicators .van-swipe__indicator {
+  background: #D3D3D3;
 }
 
 .van-swipe {
-    height: 310px !important;
+  height: 310px !important;
 }

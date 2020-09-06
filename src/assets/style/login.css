@@ -1,0 +1,36 @@
+/* 登入注册表单 */
+
+.van-tabs {
+    margin-top: 47px;
+    width: 160px;
+}
+
+.van-tabs__line {
+    width: 58px;
+    border-radius: 0;
+}
+
+.van-cell {
+    border-bottom: 1px solid #909090;
+}
+
+.van-cell {
+    padding: 24px 0;
+}
+
+.van-field__body input {
+    font-size: 14px;
+    font-weight: 500;
+    color: #717171;
+    line-height: 20px;
+}
+
+.van-form {
+    padding: 10px 6px;
+}
+
+.van-button {
+    border-radius: 0;
+    background: #D2D2D2;
+    margin-top: 46px;
+}

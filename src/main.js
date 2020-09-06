@@ -15,7 +15,13 @@ import {
     Swipe,
     SwipeItem,
     Card,
-    NavBar
+    NavBar,
+    Form,
+    Tab,
+    Tabs,
+    Field,
+    Button,
+    Icon
 } from "vant";
 
 //监听手机滑动事件，引入的模块
@@ -28,6 +34,12 @@ Vue.use(Swipe);
 Vue.use(SwipeItem);
 Vue.use(Card);
 Vue.use(NavBar);
+Vue.use(Form);
+Vue.use(Tab);
+Vue.use(Tabs);
+Vue.use(Field);
+Vue.use(Button);
+Vue.use(Icon);
 
 new Vue({
     router,

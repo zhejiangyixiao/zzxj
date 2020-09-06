@@ -43,6 +43,24 @@ const routes = [{
                 component: () =>
                     import ("../views/Mine")
             },
+            {
+                // 设置 美术馆全无系列 路径
+                path: "/classifydetail",
+                component: () =>
+                    import ("../views/classifyDetail")
+            },
+            {
+                // 设置 登入注册 路径
+                path: "/Login",
+                component: () =>
+                    import ("../views/Login")
+            },
+            {
+                // 设置 登入注册 路径
+                path: "/fenleiDetail",
+                component: () =>
+                    import ("../views/fenleiDetail")
+            }
         ]
     },
     {
