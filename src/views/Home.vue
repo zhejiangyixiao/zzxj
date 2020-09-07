@@ -54,12 +54,7 @@
 
             <!-- 轮播图二 -->
             <div class="make-shop-nav">
-<<<<<<< HEAD
-              <!-- 轮播图二 -->
-              <div class="custom-indicator">{{ current2+1 }}/{{arrSwiper2.length}}</div>
-=======
               <div class="custom-indicator">{{ current2 + 1 }}/{{arrSwiper2.length}}</div>
->>>>>>> zzxj-lijinzhe
             </div>
           </div>
           <van-swipe class="my-swipe" :autoplay="0" indicator-color="white" @change="onChange2">

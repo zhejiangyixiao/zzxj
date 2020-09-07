@@ -4,9 +4,9 @@
         <div class="mineMsg">
             <!-- <van-cell v-for="(item,index) in mineList" :key="index" :title="item" is-link value /> -->
             <van-cell title="头像" is-link @click="showPopup1">
-                <template #right-icon>
+                <template>
                     <div class="head-icon">
-                        <img src="../assets/images/profile-photo1.png" alt />
+                        <img src="../assets/style/mine-img/myhead.png" alt />
                     </div>
                 </template>
             </van-cell>
@@ -61,9 +61,9 @@ export default {
             show1: false,
             show2: false,
             show3: false,
-            minDate: new Date(1955, 0, 1),
-            maxDate: new Date(2020, 10, 1),
-            currentDate: new Date(2000, 0, 1),
+            minDate: new Date(1800, 0, 1),
+            maxDate: new Date(),
+            currentDate: new Date(),
             date: "点击设置生日",
             sex: "点击设置性别",
             name: "点击设置昵称",
@@ -118,9 +118,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.body{
-    background:#fff
-}
 .cf {
     overflow: hidden;
 }
@@ -130,8 +127,12 @@ export default {
 }
 
 .information {
-    background-color: #f7f6f6;
-    height: 100%;
+    position :absolute;
+    top:0;
+    bottom:0;
+    left :0;
+    right :0;
+    background-color: #f6f6f6;
 }
 
 .mineMsg {
@@ -152,11 +153,16 @@ export default {
     margin-top: 5px;
 }
 
-.head-icon{
-    width: 40px;
-    height: 40px;
-    background-color: red;
+.head-icon {
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
+    position:absolute;
+    right :0;
+}
+
+.head-icon img {
+    width: 100%;
 }
 
 .van-popup {
@@ -204,7 +210,7 @@ export default {
 }
 
 .popup-name {
-    height:100%;
+    height: 100%;
     background-color: #fff;
 }
 
@@ -221,5 +227,8 @@ export default {
     margin: 30px 60px 0;
     line-height: 40px;
     border-radius: 12px;
+    color: #fff;
+    background-color: #1989fa;
+    border: 1px solid #1989fa;
 }
 </style>
