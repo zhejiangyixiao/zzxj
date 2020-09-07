@@ -2,8 +2,8 @@
 <!-- /分类-全屋系列 -->
 
   <div class="museum" >
-      <div class="top">
-          <span class="left">&lt;</span>
+      <div class="top" >
+          <van-icon class="left" name="arrow-left" color="white" />
           <h2>美术馆全屋系列</h2>
       </div>
       <!-- 顶部图片 -->
@@ -11,19 +11,21 @@
             <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt="">            
         </div>        
     <!-- 中间的选择按钮 -->
-    <div class="choose" :class="{fixed:height>100}">
+    <div class="choose" :class="{fixed:height>100}" @scroll="changetop" ref="choosebox">
         <span @click="changesmall"></span>
-        <i @clisk="changebig"></i>
+        <div class="big" @click="changebig"></div>
     </div>
         <!-- 商品列表 -->
         <ul>
-            <li v-for="(item,index) in museumlist" :key="index">                
-                <div class="showimg">
+            <li v-for="(item,index) in museumlist" :key="index" :class="{liwidth:flag}">                
+                <div class="showimg" :class="{showimgheight:flag}" >
                     <img :src="item.img" alt="">
                 </div>
                 <h4>{{item.title}} </h4>
-                <p>￥{{item.sprice}} </p>
-                <span>￥{{item.oldsprice}} </span>
+                <div class="sprice">
+                    <p>￥{{item.sprice}} </p>
+                    <span>￥{{item.oldsprice}} </span>
+                </div>
                 <div class="smallbox">
                     <i></i>
                 </div>
@@ -37,10 +39,14 @@ import axios from 'axios';
     export default {
         data(){
             return{
+                flag:false,
                 height:0,
                 fixed:true,
                 museumlist:[],
                 ilist:[],
+                height1:0,//到顶部的距离
+                top:{top:40},
+                size:{size:24}
             }
         },
         mounted(){
@@ -52,28 +58,28 @@ import axios from 'axios';
             .catch(function (error) {
                 console.log(error) }),
             window.addEventListener('scroll',()=>{
-                this.onscroll()
-            })           
+                // this.onscroll()
+                this.changetop()
+            })
         },
         methods:{
             handleScrollx() {
-	        console.log(document.documentElement.scrollTop)
+	        // console.log(document.documentElement.scrollTop)
             },
             changesmall(){
-                console.log(1)
-                // document.querySelector('li').style.width="148px";
-                // document.querySelector('showimg').style.height="148px";
+                this.falg=false;
             },
             changebig(){
-                console.log(2)
-                // document.querySelector('li').style.width="100%";
-                // document.querySelector('showimg').style.height="200px";
+                this.flag=true;
             },
             onscroll(){
-                this.height=document.documentElement.scrollTop;
-               console.log(this.height)
-            }
-            
+                // this.height=document.documentElement.scrollTop;
+            //    console.log(this.height)
+            },
+            changetop(){                
+                // this.height1=this.$refs.choosebox.getBoundingClientRect().top-40
+                console.log(this.height1)
+            }            
         }
     }
 </script>
@@ -105,19 +111,18 @@ import axios from 'axios';
         z-index :2;
         .left{           
             display :block;
-            width:28px;
-            height:28px;
-            color:black;
+            width:32px;
+            height:32px;
             z-index :2;
-            font-size:18px;
-            position:fixed;
-            left:20px;
-            top:-20px;
+            padding:6px 0 0 0 ;
+        }
+        .changebck{
+            background-image:url("../assets/img/icon1-1.png");
         }
         h2{
             position:fixed;
             left:90px;
-            top:40px;
+            top:10px;
             width: 170px;
             height: 23px;
             font-size: 24px;
@@ -142,9 +147,10 @@ import axios from 'axios';
             width:16px;
             height:16px;
             margin:0 16px;
-            background:url(../assets/img/icon-2@2x.png)
+            background:url(../assets/img/icon-2@2x.png);
+            background-size:17px;
         }
-        i{
+        .big{
             width:16px;
             height:16px;
             background:#ccc;
@@ -163,19 +169,27 @@ import axios from 'axios';
         width:100%;
         display:flex;
         justify-content:space-between;
-        flex-wrap:wrap;
-        li{
-            width:184px;
+        flex-wrap:wrap;        
+        li{            
             position:relative;
-            padding-bottom:50px;
+            padding-bottom:30px;
+            display:flex;
+            justify-content :center;
+            flex-direction :column;
+            width:184px;         
+        .liwidth{
+            width:375px;
+        }       
             .showimg{
-                height:184px;
                 width:100%;
-                background:pink
+                height:184px;
                 img{
                     width:100%;
                     height:100%;
                 }
+            }
+            .showimgheight{
+                height:375px;
             }
             h4{
                 width: 100%;
@@ -186,34 +200,32 @@ import axios from 'axios';
                 text-align:center;
                 margin:16px 0;
             }
-            p{
-                width: 31px;
-                height: 10px;
-                font-size: 13px;
-                font-weight: bold;
-                color: #D93026;
-                line-height: 13px;
-                margin-left:50px;
-            }
-            span{
-                width: 25px;
-                height: 8px;
-                font-size: 11px;
-                font-weight: bold;
-                color: #000000;
-                line-height: 8px;
-                text-decoration:line-through;
-                position:absolute;
-                right:54px;
-                bottom:50px;
-            }
-            .smallbox{
-                width:50px;
-                height:10px;
-                position:absolute;
-                left:70px;
-                bottom:30px;
+            .sprice{
+                width:100%;
                 display:flex;
+                justify-content :center;
+                p{
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: #D93026;
+                    line-height: 13px;
+                    float:left;
+                }
+            span{
+                    font-size: 11px;
+                    font-weight: bold;
+                    color: #000000;
+                    text-decoration:line-through;
+                    float:left;
+                    margin-left:5%;
+                }
+            }
+            
+            .smallbox{
+                width:100%;
+                height:10px;
+                display:flex;
+                margin-top:10px;
                 justify-content :center;
                 i{               
                     display block;

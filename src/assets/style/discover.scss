@@ -1,22 +1,27 @@
 .my-swipe .van-swipe-item[data-v-fae5bece] {
-    background-color: #fff!important;
+    background-color: #fff;
     img {
         width: 100%;
     }
-}
-
-.van-swipe__indicator {
-    background-color: #ccc!important;
 }
 
 .handpick .van-swipe__indicator--active {
     background-color: black!important;
 }
 
+// 轮播图小圆点
 .van-swipe__indicators {
-    bottom: 10px!important;
+    bottom: -15px!important;
+    z-index: 2;
+    .van-swipe__indicator {
+        background: #D3D3D3;
+    }
 }
 
 .van-swipe {
     height: 310px!important;
 }
+
+// .van-swipe__track {
+//     margin-bottom: 20px;
+// }
