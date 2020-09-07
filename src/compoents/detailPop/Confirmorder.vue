@@ -1,91 +1,91 @@
 <template>
-  <div class="confirm-older">
-      <van-nav-bar
-        title="订单确认"
-        left-arrow
-        fixed
-        placeholder 
-        z-index=10
-        border
-        @click-left="onClickLeft"
-      />
-      <!-- 添加地址 -->
-      <div class="dzl">
-          <p>您需要我们送到哪里？</p>
-          <div class="dz" @click="toAddress">
-              <span>添加收获地址</span>
-              <van-icon name="arrow" :size="16" color="#8F8F8F"/>
+    <div class="confirm-older">
+          <!-- 头部 -->
+          <van-nav-bar
+            title="订单确认"
+            left-arrow
+            fixed
+            placeholder 
+            z-index=10
+            border
+            @click-left="onClickLeft"
+          />
+          <!-- 添加地址 -->
+          <div class="dzl">
+              <p>您需要我们送到哪里？</p>
+              <div class="dz" @click="toAddress">
+                  <span>添加收获地址</span>
+                  <van-icon name="arrow" :size="16" color="#8F8F8F"/>
+              </div>
+              <div class="xy">
+                <input type="checkbox">
+                <span>我已阅读并同意</span>
+                <a href="#" >《造作物流及售后协议》</a>
+              </div>
           </div>
-          <div class="xy">
-            <input type="checkbox">
-            <span>我已阅读并同意</span>
-            <a href="#" >《造作物流及售后协议》</a>
+          <!-- 价格明细 -->
+          <div class="price-detail">
+              <p>您的订单价格明细</p>
+              <div class="price">
+                  <li>
+                    <span>商品合计</span>
+                    <span class="jg">￥4998</span>
+                    </li>
+                  <li>
+                    <span>运费</span>
+                    <span class="jg">请选择地址</span>
+                    </li>
+                  <li>
+                    <span>实付</span>
+                    <span class="jg">￥4998</span>
+                  </li>
+              </div>
           </div>
-      </div>
-      <!-- 价格明细 -->
-      <div class="price-detail">
-          <p>您的订单价格明细</p>
-          <div class="price">
-              <li>
-                <span>商品合计</span>
-                <span class="jg">￥4998</span>
-                </li>
-              <li>
-                <span>运费</span>
-                <span class="jg">请选择地址</span>
-                </li>
-              <li>
-                <span>实付</span>
-                <span class="jg">￥4998</span>
-              </li>
-          </div>
-      </div>
-      <!-- 是否开发票 -->
-      <div class="invoice">
-        <p>您是否需要发票？</p>
-        <div class="fp van-hairline--top">
-          <div class="one">
-             <input type="checkbox">
-             <span>我要开发票</span>
-          </div>
-          <van-icon name="arrow" color="#8F8F8F" :size="14" />
-        </div>
-      </div>
-      <!-- 备注添加 -->
-      <div class="increase-remarks">
-        <p>如果还有别的需要，备注一句</p>
-       <textarea ></textarea>
-      </div>
-      <!-- 商品清单 -->
-      <div class="qdList">
-        <p>您的商品清单</p>
-        <div class="goodList">
-            <div class="tophead">
-              <span>单品</span>
+          <!-- 是否开发票 -->
+          <div class="invoice">
+            <p>您是否需要发票？</p>
+            <div class="fp van-hairline--top">
+              <div class="one">
+                <input type="checkbox">
+                <span>我要开发票</span>
+              </div>
+              <van-icon name="arrow" color="#8F8F8F" :size="14" />
             </div>
-            <li>
-              <div class="imgbx">
-
-              </div>
-              <div class="rightT">
-                <p class="title">西竹躺椅</p>
-                <p class="types">蓝绿</p>
-                <p class="gettime">预计2020-09-03前发货</p>
-                <div class="priceO">
-                    <span>￥4998</span>
-                    <span>x1</span>
+          </div>
+          <!-- 备注添加 -->
+          <div class="increase-remarks">
+            <p>如果还有别的需要，备注一句</p>
+          <textarea ></textarea>
+          </div>
+          <!-- 商品清单 -->
+          <div class="qdList">
+            <p>您的商品清单</p>
+            <div class="goodList">
+                <div class="tophead">
+                  <span>单品</span>
                 </div>
-              </div>
-            </li>
-        </div>
-      </div>
-      <!-- 底部结算 -->
-      <div class="js">
-          <span>￥4998</span>
-          <button>马上结算</button>
-      </div>
-  </div>
-  
+                <li>
+                  <div class="imgbx">
+
+                  </div>
+                  <div class="rightT">
+                    <p class="title">西竹躺椅</p>
+                    <p class="types">蓝绿</p>
+                    <p class="gettime">预计2020-09-03前发货</p>
+                    <div class="priceO">
+                        <span>￥4998</span>
+                        <span>x1</span>
+                    </div>
+                  </div>
+                </li>
+            </div>
+          </div>
+          <!-- 底部结算 -->
+          <div class="js">
+              <span>￥4998</span>
+              <button>马上结算</button>
+          </div>
+    </div>
 </template>
 <script>
 export default {
@@ -165,7 +165,7 @@ export default {
       a
         color #418D59
         margin-left 18px
-      
+
   .price-detail
     margin-top 10px
     background #fff
@@ -191,6 +191,7 @@ export default {
         margin-bottom 10px
         .jg
           color #8F8F8F
+
   .invoice
     width 100%
     height 130px
@@ -236,6 +237,7 @@ export default {
           background-size 16px
         span 
           margin-left 12px 
+
   .increase-remarks
     width 100%
     height 183px
@@ -308,7 +310,6 @@ export default {
             display flex
             font-size 13px
             justify-content space-between
-            
   .js
     width 100%
     margin-top 18px
