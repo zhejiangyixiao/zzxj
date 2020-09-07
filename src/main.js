@@ -48,7 +48,8 @@ import {
     SwipeCell,
     Card,
     AddressList,
-    Switch
+    Switch,
+    DatetimePicker,
 } from "vant";
 
 
@@ -88,6 +89,10 @@ Vue.use(SwipeCell);
 Vue.use(Card);
 Vue.use(AddressList)
 Vue.use(Switch);
+Vue.use(AddressList);
+Vue.use(DatetimePicker);
+
+
 
 new Vue({
     router,

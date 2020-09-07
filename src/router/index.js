@@ -76,6 +76,24 @@ const routes = [{
         component: () =>
             import ('../views/MineDiscount.vue'),
     },
+    // 我的->头像信息
+    {
+        path: '/mineData',
+        component: () =>
+            import ('../views/mineData.vue'),
+    },
+    // 我的 ->收藏
+    {
+        path: '/mineCollect',
+        component: () =>
+            import ('../views/mineCollect.vue'),
+    },
+    // {
+    //     // 收货地址点击进去的路由页面
+    //     path: '/address',
+    //     component: () =>
+    //         import ('../compoents/Mine/Address.vue'),
+    // },
     {
         // 设置登录路径
         path: "/login",
