@@ -57,7 +57,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;                                                                                                      
+  bottom: 0;
   background: #fff;
   z-index: 10;
 }
@@ -76,7 +76,7 @@ export default {
   padding: 0 60px 0 10px;
   border: 1px solid #ccc;
   position: relative;
-  background: #eee;
+  background: #f6f6f6;
 }
 
 // input框placeholder默认颜色修改
@@ -113,8 +113,8 @@ input::-moz-placeholder {
 .noCard {
   display: block;
   margin: 100px auto 10px;
-  width 160px
-  height 160px
+  width: 160px;
+  height: 160px;
 }
 
 p {

@@ -2,7 +2,7 @@
   <div class="Mine-container">
     <!-- 头部个人信息简介 -->
     <div class="selfMsg">
-      <div class="imgBox">
+      <div class="imgBox" @click="toMymsg">
         <img src="../assets/style/mine-img/myhead.png" />
       </div>
       <div class="textBox">
@@ -25,7 +25,7 @@
       <van-grid-item icon="photo-o" text="文字" />
     </van-grid>-->
     <van-grid :border="false" :column-num="5">
-      <van-grid-item v-for="(item,index) in gridList" :key="index" to="item.towhere">
+      <van-grid-item v-for="(item,index) in gridList" :key="index" :to="item.towhere">
         <img :src="item.img" alt />
         <p class="gridText">{{item.text}}</p>
       </van-grid-item>
@@ -39,7 +39,7 @@
       <van-cell title="会员中心" is-link value="1" />
       <van-cell title="我的优惠券" is-link to="/discount" />
       <van-cell title="我的礼品卡" is-link  />
-      <van-cell title="我的收藏" is-link />
+      <van-cell title="我的收藏" is-link to="mineCollect"/>
       <van-cell title="在线客服" is-link />
       <van-cell title="收货地址" is-link to="/address" />
       <van-cell title="设置" is-link to="/mineset" />
@@ -60,7 +60,7 @@ export default {
         {
           img: icon1,
           text: "未付款",
-          towhere: "/notpay"
+          towhere: "/nonpayment"
         },
         {
           img: icon2,
@@ -83,7 +83,11 @@ export default {
       ]
     };
   },
-  methods: {}
+  methods: {
+    toMymsg(){
+      this.$router.push('/mineData');
+    }
+  }
 };
 </script>
 <style lang='stylus' scoped>

@@ -5,7 +5,13 @@
     <van-nav-bar title="设置" left-arrow @click-left="onClickLeft" />
 
     <!-- options -->
-    <van-cell title="个人资料" is-link to="/mineData" />
+    <van-cell title="个人资料" is-link to="/mineData">
+      <template>
+        <div class="head-icon">
+          <img src="../assets/style/mine-img/myhead.png" alt />
+        </div>
+      </template>
+    </van-cell>
     <van-cell title="账户安全" is-link />
     <van-cell title="消息推送提醒">
       <template #right-icon>
@@ -38,9 +44,9 @@ export default {
 
   mounted() {},
   methods: {
-      onClickLeft() {
+    onClickLeft() {
       this.$router.go(-1);
-    },
+    }
   }
 };
 </script>
@@ -83,6 +89,22 @@ export default {
   font-weight: 500;
   color: #FEFEFE;
   line-height: 20px;
+}
+
+.van-cell__title {
+  line-height: 36px;
+}
+
+.head-icon {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  right: 5px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
 

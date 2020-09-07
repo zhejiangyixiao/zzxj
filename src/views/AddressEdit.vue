@@ -1,8 +1,14 @@
 <template>
   <div class="add-container">
-    <!-- 添加地址页面 -->
+    <!-- 修改地址页面 -->
     <!-- 头部 -->
-    <van-nav-bar title="添加新收货地址" left-arrow @click-left="onClickLeft" />
+    <van-nav-bar
+      title="编辑我的收货地址"
+      left-arrow
+      right-text="删除"
+      @click-left="onClickLeft"
+      @click-right="onClickRight"
+    />
 
     <AddrMsg />
   </div>
@@ -27,6 +33,20 @@ export default {
   methods: {
     onClickLeft() {
       this.$router.go(-1);
+    },
+    onClickRight() {
+      this.$dialog
+        .confirm({
+          title: "提示",
+          message: "您确定要删除该收货地址吗？"
+        })
+        .then(() => {
+          // on confirm
+          this.$router.push("/address");
+        })
+        .catch(() => {
+          // on cancel
+        });
     }
   }
 };
@@ -47,5 +67,6 @@ export default {
 .add-container .van-nav-bar .van-icon {
   color: black;
 }
+
 </style>
 

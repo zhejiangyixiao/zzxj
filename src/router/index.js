@@ -59,10 +59,16 @@ const routes = [{
             import ('../views/AddressAdd.vue'),
     },
     {
-        // 修改收货地址
+        // 查询收货地址
         path: '/address',
         component: () =>
             import ('../views/Address.vue'),
+    },
+    {
+        // 修改收货地址
+        path: '/addressEdit',
+        component: () =>
+            import ('../views/AddressEdit.vue'),
     },
     {
         // mine-设置
@@ -88,12 +94,6 @@ const routes = [{
         component: () =>
             import ('../views/mineCollect.vue'),
     },
-    // {
-    //     // 收货地址点击进去的路由页面
-    //     path: '/address',
-    //     component: () =>
-    //         import ('../compoents/Mine/Address.vue'),
-    // },
     {
         // 设置登录路径
         path: "/login",

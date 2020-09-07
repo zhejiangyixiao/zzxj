@@ -41,7 +41,9 @@ export default {
 
   computed: {},
 
-  mounted() {},
+  mounted() {
+    
+  },
 
   methods: {
     onClickLeft() {
@@ -49,7 +51,7 @@ export default {
       this.$router.push("/mine");
     },
     toEdit() {
-      this.$router.push("/addressAdd");
+      this.$router.push("/addressEdit");
     }
   }
 };
@@ -63,7 +65,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #eee;
+  background: #F6F6F6;
   z-index: 10;
 }
 
