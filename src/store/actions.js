@@ -13,8 +13,9 @@ export const actions = {
     },
     // 请求分类页
     async getClassfiyData({ commit }, payload) {
+        console.log(1122);
         const res = await getClassfiyList(payload);
-        console.log(payload, res);
+        console.log(res);
         commit("getClassfiyData", {
             list: res.list,
         })

@@ -42,7 +42,24 @@ const routes = [{
                 // 设置 我的 路径
                 path: "/mine",
                 component: () =>
-                    import ("../views/Mine")
+                    import ('../views/Mine.vue'),
+                redirect: "/mymine",
+                children: [{
+                        path: '/mymine',
+                        component: () =>
+                            import ("../compoents/Mine/Mine.vue"),
+                    },
+                    {
+                        path: '/addressAdd',
+                        component: () =>
+                            import ('../compoents/Mine/AddressAdd.vue'),
+                    },
+                    {
+                        path: '/address',
+                        component: () =>
+                            import ('../compoents/Mine/Address.vue'),
+                    },
+                ]
             },
             {
                 path: '/findings',

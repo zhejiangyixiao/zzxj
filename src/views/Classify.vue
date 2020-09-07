@@ -48,41 +48,43 @@
         <span class="popup-fdj">
           <img src="../assets/imgs/icon-fangdajing.png" alt />
         </span>
-    </div>
-    <!-- 历史搜索 -->
-    <div class="history">
-      <div class="history-text">
-        <strong>
-          历史搜索
-        </strong>
-        <span>
-          <van-icon name="delete" />
-        </span>
-        <div class="history-cont">
-          <span>你好</span>
+      </div>
+      <!-- 历史搜索 -->
+      <div class="history">
+        <div class="history-text">
+          <strong>
+            历史搜索
+          </strong>
+          <span>
+            <van-icon name="delete" />
+          </span>
+          <div class="history-cont">
+            <span>你好</span>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- 热门搜索 -->
-    <div class="history hot-search">
-      <div class="history-text">
-        <strong>
-          热门搜索
-        </strong>
-        <div class="history-cont">
-          <span>云杉天丝新色</span>
-          <span>沙发</span>
-          <span>新家卡</span>
-          <span>美术馆系列</span>
-          <span>桌几</span>
+      <!-- 热门搜索 -->
+      <div class="history hot-search">
+        <div class="history-text">
+          <strong>
+            热门搜索
+          </strong>
+          <div class="history-cont">
+            <span>云杉天丝新色</span>
+            <span>沙发</span>
+            <span>新家卡</span>
+            <span>美术馆系列</span>
+            <span>桌几</span>
+          </div>
         </div>
       </div>
-    </div>
     </van-popup>
   </div>
+  
 </template>
 
 <script>
+
 import img from "../assets/imgs/img-1.png";
 import {mapState} from 'vuex';
 export default {
@@ -108,7 +110,8 @@ export default {
     };
   },
 
-  components: {},
+  components: {
+  },
 
   computed: {},
 
@@ -220,16 +223,18 @@ export default {
   
 }
 // 弹出层样式
-.van-popup .popup-fdj {
+.van-popup .popup-fdj{
   position: absolute;
   left 10px
-  top 10px
+  top 15px
+}
+.van-popup .popup-fdj img{
+  position: absolute; 
 }
 .van-popup input{
   width 300px
   float right 
 }
-
 .history
   margin-top 40px
   padding-left 17px
@@ -251,6 +256,4 @@ export default {
       flex-wrap wrap
       margin-left 5px
       margin-bottom 5px
-
-
 </style>
