@@ -7,7 +7,8 @@ const routes = [{
         // 设置重定向 跳转主页面
         path: "/",
         redirect: "/index"
-    }, {
+    },
+    {
         // 刚开始的主页面  包含tabbar
         path: "/index",
         component: () =>
@@ -41,12 +42,12 @@ const routes = [{
                 // 设置 我的 路径
                 path: "/mine",
                 component: () =>
-                    import ('../views/Mine.vue'),
+                    import ("../views/Mine")
             },
             {
                 path: '/findings',
                 component: () =>
-                    import ('../views/Findings.vue'),
+                    import ('../views/Findings.vue')
             }
         ]
     },
@@ -81,24 +82,19 @@ const routes = [{
         component: () =>
             import ('../views/Login'),
     },
-
     {
         //设置商品详情页
         path: '/detail',
         component: () =>
             import ('../views/Detailpage.vue')
     },
-    // 商品规格
     {
-        path: '/specs',
+        // 未库付款页面
+        path: '/nonpayment',
         component: () =>
-            import ('../views/DetailSpecs.vue')
+            import ('../views/Nonpayment.vue')
     },
-    {
-        path: "/test",
-        component: () =>
-            import ('../views/test'),
-    },
+
     {
         // 未设置的路径 跳转404 页面
         path: "/*",

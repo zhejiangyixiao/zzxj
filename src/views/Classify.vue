@@ -1,6 +1,6 @@
 <template>
   <div class="classfiy-container">
-    <div class="search">
+    <div class="search" @click="showPopup">
       <!-- 搜索框 -->
       <input type="text" />
       <span>
@@ -21,7 +21,7 @@
       <!-- 右侧内容图 -->
       <ul class="rightlist">
         <li v-for="(item,index) in classfiy_list" :key="index"
-        :style="{width : type === '1' ? '100%' : '47%'}"
+        :style="{width : type === '1' ? '100%' : '47%'}" @click="toclassifydetail"
         >
           <img :src="item.imgUrl" alt=""
           
@@ -40,6 +40,45 @@
           <!-- </van-grid-item>
       </van-grid> -->
     </div>
+    <!-- 弹出层 -->
+    <van-popup v-model="show" position="bottom" :style="{ height: '100%' }"  closeable>
+      <div class="search">
+      <!-- 弹出层搜索框 -->
+        <input type="text" />
+        <span class="popup-fdj">
+          <img src="../assets/imgs/icon-fangdajing.png" alt />
+        </span>
+    </div>
+    <!-- 历史搜索 -->
+    <div class="history">
+      <div class="history-text">
+        <strong>
+          历史搜索
+        </strong>
+        <span>
+          <van-icon name="delete" />
+        </span>
+        <div class="history-cont">
+          <span>你好</span>
+        </div>
+      </div>
+    </div>
+    <!-- 热门搜索 -->
+    <div class="history hot-search">
+      <div class="history-text">
+        <strong>
+          热门搜索
+        </strong>
+        <div class="history-cont">
+          <span>云杉天丝新色</span>
+          <span>沙发</span>
+          <span>新家卡</span>
+          <span>美术馆系列</span>
+          <span>桌几</span>
+        </div>
+      </div>
+    </div>
+    </van-popup>
   </div>
 </template>
 
@@ -51,6 +90,7 @@ export default {
     return {
       activeKey: "",
       type:'1',
+      show:false,
       sidebarList: [
         {
           title: "爆款经典",
@@ -88,6 +128,12 @@ export default {
       this.$store.dispatch("getClassfiyData",{
         type:this.type
       });
+    },
+    toclassifydetail(){
+      this.$router.push('/')
+    },
+    showPopup(){
+       this.show = true;
     }
   },
   computed: {
@@ -173,4 +219,38 @@ export default {
     }
   
 }
+// 弹出层样式
+.van-popup .popup-fdj {
+  position: absolute;
+  left 10px
+  top 10px
+}
+.van-popup input{
+  width 300px
+  float right 
+}
+
+.history
+  margin-top 40px
+  padding-left 17px
+  padding-right 11px
+  font-size 14px
+  span
+    float right 
+    font-size 16px
+  .history-cont
+    margin-top 40px
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    span 
+      background: rgba(241, 242, 243, 0.95);
+      border-radius: 2px;
+      padding 8px
+      display flex
+      flex-wrap wrap
+      margin-left 5px
+      margin-bottom 5px
+
+
 </style>

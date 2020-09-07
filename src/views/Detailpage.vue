@@ -30,10 +30,18 @@
         
         <!-- 商品轮播图 -->
         <van-swipe  @change="onChange">
-            <van-swipe-item>1</van-swipe-item>
-            <van-swipe-item>2</van-swipe-item>
-            <van-swipe-item>3</van-swipe-item>
-            <van-swipe-item>4</van-swipe-item>
+            <van-swipe-item>
+                <img src="../assets/style/index-img/detail-1.png" alt="">
+            </van-swipe-item>
+            <van-swipe-item>
+                <img src="../assets/style/index-img/detail-1.png" alt="">
+            </van-swipe-item>
+            <van-swipe-item>
+                <img src="../assets/style/index-img/detail-1.png" alt="">
+            </van-swipe-item>
+            <van-swipe-item>
+                <img src="../assets/style/index-img/detail-1.png" alt="">
+            </van-swipe-item>
             <template #indicator>
                 <div class="custom-indicator">
                     {{ current + 1 }}/4
@@ -44,6 +52,12 @@
         <div class="message">
             <div class="title">
                 <span>美术馆墙镜</span>
+                <span class="collect-btn">
+                    <van-icon name="like-o"  @click="collect" v-if="likebtn"/>
+                    <van-icon name="like"  color='red' class="red-collect" v-if="redbtn" @click="redcollect"/>
+                </span>
+                
+                    
             </div>
             <div class="describe">
                 <span>现代的丰饶，空间的画作</span>
@@ -105,12 +119,15 @@
 </template>
 
 <script>
+import {Toast}from "vant";
 export default {
   data() {
     return {
         current: 0,
         active:'0',
         showAbs:false,
+        redbtn:false,
+        likebtn:true,
         opacityStyle:{
             opacity:1
         }
@@ -146,7 +163,19 @@ export default {
         }else{
             this.showAbs = false
         }
+    },
+    collect(){
+        this.redbtn=true;
+        this.likebtn=false;
+        Toast('收藏成功');
+    },
+    redcollect(){
+        this.redbtn=false;
+        this.likebtn=true;
+        Toast('取消收藏成功');
     }
+
+    
   }
 };
 </script>
@@ -215,6 +244,14 @@ export default {
 .message .title{
     font-size 16px
     font-weight 900
+}
+.collect-btn{
+    float right
+}
+.red-collect{
+    float right
+    z-index 10
+
 }
 .describe{
     font-size 14px
