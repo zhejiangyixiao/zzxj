@@ -44,7 +44,9 @@ import {
     PullRefresh,
     SwipeCell,
     Card,
-    AddressList
+    AddressList,
+    Switch,
+    DatetimePicker,
 } from "vant";
 
 
@@ -80,6 +82,10 @@ Vue.use(PullRefresh);
 Vue.use(SwipeCell);
 Vue.use(Card);
 Vue.use(AddressList)
+Vue.use(Switch);
+Vue.use(AddressList);
+Vue.use(DatetimePicker);
+
 
 
 new Vue({

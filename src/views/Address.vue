@@ -8,11 +8,11 @@
 
     <div class="address-list" v-for="(item,index) in list" :key="index" @click="toEdit">
       <van-icon name="records" />
-      <p class="addName">{{item.name}}</p>
-      <p class="addtel">{{item.tel}}</p>
+      <p class="addName">{{item.address_username}}</p>
+      <p class="addtel">{{item.address_phone}}</p>
       <p class="addText">
-        <span class="isDefault" v-if="item.isDefault">默认</span>
-        <span class="addText">{{item.address}}</span>
+        <span class="isDefault" v-if="item.isDefault==='0'">默认</span>
+        <span class="addText">{{item.address_area}}{{item.address_detail}}</span>
       </p>
     </div>
 
@@ -27,18 +27,12 @@ export default {
     return {
       list: [
         {
-          id: "1",
-          name: "张三",
-          tel: "13000000000",
-          address: "浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室",
-          isDefault: true
-        },
-        {
-          id: "1",
-          name: "张三",
-          tel: "13000000000",
-          address: "浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室",
-          isDefault: false
+          address_id: 1,
+          address_username: "张三",
+          address_phone: "121646654656",
+          address_area: "浙江杭州江干",
+          address_detail: "九和路7号",
+          isDefault: "0"
         }
       ]
     };
@@ -61,8 +55,7 @@ export default {
 };
 </script>
 <style lang='stylus' scoped>
-@import '../../assets/style/mineStyle.css';
-
+@import '../assets/style/mineStyle.css';
 
 .addHad-container {
   position: absolute;

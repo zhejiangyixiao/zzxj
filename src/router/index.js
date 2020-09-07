@@ -7,7 +7,8 @@ const routes = [{
         // 设置重定向 跳转主页面
         path: "/",
         redirect: "/index"
-    }, {
+    },
+    {
         // 刚开始的主页面  包含tabbar
         path: "/index",
         component: () =>
@@ -41,31 +42,51 @@ const routes = [{
                 // 设置 我的 路径
                 path: "/mine",
                 component: () =>
-                    import ('../views/Mine.vue'),
-                redirect: "/mymine",
-                children: [{
-                        path: '/mymine',
-                        component: () =>
-                            import ("../compoents/Mine/Mine.vue"),
-                    },
-                    {
-                        path: '/addressAdd',
-                        component: () =>
-                            import ('../compoents/Mine/AddressAdd.vue'),
-                    },
-                    {
-                        path: '/address',
-                        component: () =>
-                            import ('../compoents/Mine/Address.vue'),
-                    },
-                ]
+                    import ("../views/Mine")
             },
             {
                 path: '/findings',
                 component: () =>
-                    import ('../views/Findings.vue'),
+                    import ('../views/Findings.vue')
             }
         ]
+    },
+
+    {
+        // 添加收货地址
+        path: "/addressAdd",
+        component: () =>
+            import ('../views/AddressAdd.vue'),
+    },
+    {
+        // 修改收货地址
+        path: '/address',
+        component: () =>
+            import ('../views/Address.vue'),
+    },
+    {
+        // mine-设置
+        path: '/mineset',
+        component: () =>
+            import ('../views/MineSet.vue'),
+    },
+    {
+        // mine-优惠券
+        path: '/discount',
+        component: () =>
+            import ('../views/MineDiscount.vue'),
+    },
+    // 我的->头像信息
+    {
+        path: '/mineData',
+        component: () =>
+            import ('../views/mineData.vue'),
+    },
+    // 我的 ->收藏
+    {
+        path: '/mineCollect',
+        component: () =>
+            import ('../views/mineCollect.vue'),
     },
     // {
     //     // 收货地址点击进去的路由页面
@@ -92,10 +113,12 @@ const routes = [{
             import ('../views/Detailpage.vue')
     },
     {
-        path: "/test",
+        // 未库付款页面
+        path: '/nonpayment',
         component: () =>
-            import ('../views/test'),
+            import ('../views/Nonpayment.vue')
     },
+
     {
         // 未设置的路径 跳转404 页面
         path: "/*",

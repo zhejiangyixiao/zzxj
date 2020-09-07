@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <!-- 导航栏-nav -->
+    <!-- 头部导航栏 -->
     <header>
       <div class="scan"></div>
       <div class="title">
@@ -51,12 +51,18 @@
           <div class="make-shop-li-title">
             <h3>造作定义作品</h3>
             <p>27国100+设计大师签名作品，五年百万用户</p>
+
+            <!-- 轮播图二 -->
             <div class="make-shop-nav">
+<<<<<<< HEAD
               <!-- 轮播图二 -->
+              <div class="custom-indicator">{{ current2+1 }}/{{arrSwiper2.length}}</div>
+=======
               <div class="custom-indicator">{{ current2 + 1 }}/{{arrSwiper2.length}}</div>
+>>>>>>> zzxj-lijinzhe
             </div>
           </div>
-          <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" @change="onChange2">
+          <van-swipe class="my-swipe" :autoplay="0" indicator-color="white" @change="onChange2">
             <!-- 轮播图内容 -->
             <van-swipe-item v-for="(item,index) in arrSwiper2" :key="index">
               <div>
@@ -89,11 +95,11 @@
 
             <!-- 轮播图三 -->
             <div class="make-shop-nav">
-              <div class="custom-indicator">{{ current2 + 1 }}/{{arrSwiper3.length}}</div>
+              <div class="custom-indicator">{{ current3 + 1 }}/{{arrSwiper3.length}}</div>
             </div>
           </div>
-          <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" @change="onChange2">
-            <!-- 轮播图内容 -->
+          <!-- 轮播图内容 -->
+          <van-swipe class="my-swipe" :autoplay="0" indicator-color="white" @change="onChange3">
             <van-swipe-item v-for="(item,index) in arrSwiper3" :key="index">
               <div>
                 <img :src="item.img" alt />
@@ -163,9 +169,9 @@
         </div>
       </div>
 
+      <!-- 需要跳转到-发现-全部 -->
       <div class="look-btn-box">
         <div class="look-btn">
-          <!-- 需要跳转到-发现-全部 -->
           <span>查看更多晒单</span>
         </div>
       </div>
@@ -173,21 +179,22 @@
 
     <!-- 首页内容：全品目录 -->
     <div class="all-shop-box">
-      <!-- 目录 -->
       <div class="all-shop-title">
         <h2>全品目录</h2>
       </div>
+
       <!-- 内容 -->
       <div class="add-shop-ul">
         <div class="allClass-box" v-for="(item,index) in arrAllShop" :key="index">
           <!-- icon -->
           <div class="allClass-img">
-            <img :src="item.img" alt />
+            <img :src="item.icon" alt />
           </div>
+
           <!-- 沙发部分 -->
           <div class="allClass-name">{{item.className}}</div>
-          <!-- 商品内容 -->
           <div class="shop-list-ul">
+            <!-- 商品内容 -->
             <div class="shop-list-li" v-for="(item1,index1) in item.arrItems" :key="index1">
               <div class="shop-img">
                 <img :src="item1.img" alt />
@@ -217,6 +224,7 @@ export default {
       current: 0,
       current2: 0,
       current3: 0,
+      current4: 0,
       arrClass: [
         {
           icon: require("../assets/images/icon01@2x.png"),
@@ -377,37 +385,37 @@ export default {
       ],
       arrShow: [
         {
-          img: require("../assets/images/矩形 30@2x.png"),
+          img: require("../assets/images/rectangle@2x.png"),
           msg: "简洁，大方，百搭，我喜欢的风格，还没有入...",
-          headImg: require("../assets/images/头像1@2x.png"),
+          headImg: require("../assets/images/profile-photo1@2x.png"),
           name: "月色江南",
           address: "镇江"
         },
         {
           img: require("../assets/images/img-2.png"),
           msg: "深海沉睡床垫含有乳胶，真的很软，躺在上面...",
-          headImg: require("../assets/images/头像2@2x.png"),
+          headImg: require("../assets/images/profile-photo2@2x.png"),
           name: "叮当麻麻",
           address: "萍乡"
         },
         {
           img: require("../assets/images/img-3.png"),
           msg: "有型有款，颜色搭配也能找到默契的点缀，比...",
-          headImg: require("../assets/images/头像3@2x.png"),
+          headImg: require("../assets/images/profile-photo3@2x.png"),
           name: "Priscilla",
           address: "北京"
         },
         {
           img: require("../assets/images/img-4@2x.png"),
           msg: "漂亮的造型，富有美感的设计，摆在家里客厅...",
-          headImg: require("../assets/images/头像4@2x.png"),
+          headImg: require("../assets/images/profile-photo4@2x.png"),
           name: "不太会造作...",
           address: "北京"
         }
       ],
       arrAllShop: [
         {
-          icon: "",
+          icon: require("../assets/images/icon-1@2x.png"),
           className: "沙发SOFA",
           arrItems: [
             {
@@ -454,6 +462,9 @@ export default {
     },
     onChange3(index) {
       this.current3 = index;
+    },
+    onChange4(index) {
+      this.current4 = index;
     }
   }
 };
@@ -670,7 +681,6 @@ header {
 .allClass-img {
   width: 35px;
   height: 26px;
-  background: #000;
   margin: 0 auto 5px;
 }
 
@@ -718,5 +728,20 @@ header {
   padding: 5px;
   font-size: 12px;
   margin: 0 auto;
+}
+
+.all-shop-nav {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 16px;
+}
+
+.shop-list-li .more {
+  width: 93px;
+  height: 93px;
+  border: 5px solid #777777;
+  margin: 25px auto;
+  padding: 25px;
 }
 </style>

@@ -24,9 +24,18 @@ body{background:#fff;}
 a,a:hover{color:#333;}
 *{box-sizing: border-box;}
 // 详情页顶部导航颜色
-.detail-page .van-nav-bar .van-icon {
+.van-nav-bar .van-icon {
     color: #000;
 }
 .van-goods-action-button--first{
     color #000
 }
+// 未付款订单 标题字体加粗
+.non-payment .van-nav-bar__title
+    font-weight 900
+// 未付款订单导航底部线条颜色
+.non-payment .van-nav-bar{
+    border: 1px solid  #F6F6F6
+}
+
+            
