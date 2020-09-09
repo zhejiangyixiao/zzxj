@@ -49,7 +49,12 @@ export default {
       this.$router.push("/mine");
     },
     toEdit() {
-      this.$router.push("/addressAdd");
+      if(this.list){
+        this.$router.go(-1)
+      }else{
+          this.$router.push("/addressAdd");
+      }
+      
     }
   }
 };

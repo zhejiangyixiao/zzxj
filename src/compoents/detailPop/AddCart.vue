@@ -23,7 +23,7 @@
             少部分地区目前物流受限，客服会在发货前跟您确认
           </div>
           <div class="addCut">
-            <span>-</span>
+            <span >-</span>
             <input type="text" value="1">
             <span>+</span>
           </div>

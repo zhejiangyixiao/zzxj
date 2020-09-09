@@ -1,5 +1,5 @@
 <template>
-  <div class="detail-page" >
+  <div class="detail-page">
       <!-- 下滑显示的透明头部导航 -->
       <div class="opacity-nav" v-on:scroll.passive="onScroll" v-if="showAbs" :style="opacityStyle">
             <div class="opacity-nav-title">
@@ -73,7 +73,7 @@
             <van-col span="6"><van-icon name="passed" />7日退款</van-col>
         </van-row>
         <!-- 已选规格 -->
-         <DetailSpecs/>
+         <DetailSpecs  @addCount="fn"/>
         <!-- 商品搭配 -->
         <div class="match">
             <span class="match-1">搭配</span>
@@ -99,12 +99,13 @@
       <!-- 底部选择导航 -->
       <div class="footer-nav van-hairline--top">
           <span class="van-hairline--right" >
-            <van-icon name="service-o"  :size="20" color="#000"/>
+            <van-icon name="service-o"  :size="20" color="#000" />
+
           </span>
           <span class="van-hairline--right">
-            <van-icon name="cart-o" :size="20" color="#000"/>
+            <van-icon name="cart-o" :size="20" color="#000" :badge="count" @click="toCart"/>
           </span>
-          <QuitBuy/>
+          <QuitBuy />
           <AddCart/>
       </div>
 
@@ -128,6 +129,7 @@ export default {
         opacityStyle:{
             opacity:1
         },
+        count:''
     };
   },
   
@@ -155,7 +157,7 @@ export default {
       this.current = index;
     },
     onScroll(){
-        console.log(document.documentElement.scrollTop);
+        // console.log(document.documentElement.scrollTop);
         const top =document.documentElement.scrollTop;
 
         if(top>0){
@@ -176,6 +178,12 @@ export default {
         this.redbtn=false;
         this.likebtn=true;
         Toast('取消收藏成功');
+    },
+    fn(count){
+      this.count =count;
+    },
+    toCart(){
+      this.$router.push('/cart')
     }
 
   },

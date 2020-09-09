@@ -39,7 +39,7 @@
 import inspiration from "@/compoents/findings/inspiration";
 import FeaturedList from "@/compoents/findings/FeaturedList";
 
-import BScroll from "better-scroll";
+
 
 export default {
   data() {
@@ -61,13 +61,7 @@ export default {
     inspiration
   },
   mounted() {
-    this.$nextTick(() => {
-      let scroll = new BScroll(".wrap", {
-        scrollY: false,
-        scrollX: true,
-        click: true
-      });
-    });
+    
   }
 };
 </script>

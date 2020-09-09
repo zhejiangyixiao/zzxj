@@ -47,6 +47,7 @@ import {
     AddressList,
     Switch,
     DatetimePicker,
+    Toast
 } from "vant";
 
 
@@ -85,6 +86,7 @@ Vue.use(AddressList)
 Vue.use(Switch);
 Vue.use(AddressList);
 Vue.use(DatetimePicker);
+Vue.use(Toast)
 
 
 
