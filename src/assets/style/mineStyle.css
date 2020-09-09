@@ -83,3 +83,23 @@
 .van-tabs__line {
     background: #000;
 }
+
+
+/* 我的礼品卡输入框样式 */
+
+.input-box .van-cell__title {
+    width: 80px;
+    line-height: 50px;
+    font-size: 14px;
+    font-family: PingFang;
+    font-weight: 600;
+    color: #bbb;
+}
+
+.input-box .van-field__control {
+    height: 50px;
+    font-size: 14px;
+    font-family: PingFang;
+    font-weight: 600;
+    color: #000;
+}

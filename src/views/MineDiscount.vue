@@ -1,6 +1,6 @@
 <template>
   <div class="discount-container">
-    <!-- 添加地址页面 -->
+    <!-- 我的优惠券 -->
     <!-- 头部 -->
     <van-nav-bar title="我的优惠券" left-arrow @click-left="onClickLeft" />
 

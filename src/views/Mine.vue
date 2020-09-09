@@ -36,11 +36,11 @@
 
     <!-- 下方单元格列表显示 -->
     <div class="mineMsg">
-      <van-cell title="会员中心" is-link value="1" />
+      <van-cell title="会员中心" is-link value="1" to="/minevip" />
       <van-cell title="我的优惠券" is-link to="/discount" />
-      <van-cell title="我的礼品卡" is-link  />
+      <van-cell title="我的礼品卡" is-link  to="/minecard"/>
       <van-cell title="我的收藏" is-link to="mineCollect"/>
-      <van-cell title="在线客服" is-link />
+      <van-cell title="在线客服" is-link to="minetalk"/>
       <van-cell title="收货地址" is-link to="/address" />
       <van-cell title="设置" is-link to="/mineset" />
     </div>

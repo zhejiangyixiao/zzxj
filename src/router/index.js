@@ -82,6 +82,24 @@ const routes = [{
         component: () =>
             import ('../views/MineDiscount.vue'),
     },
+    {
+        // mine-会员中心
+        path: '/minevip',
+        component: () =>
+            import ('../views/mineVip.vue'),
+    },
+    {
+        // mine-礼品卡
+        path: '/minecard',
+        component: () =>
+            import ('../views/mineCard.vue'),
+    },
+    {
+        // mine-客服中心
+        path: '/minetalk',
+        component: () =>
+            import ('../views/mineTalk.vue'),
+    },
     // 我的->头像信息
     {
         path: '/mineData',
